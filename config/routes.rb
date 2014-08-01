@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   # Welcome
-  get "/" => 'welcome#index', as: root
+  get "/" => 'welcome#index', as: 'root'
 
   resources :users, except: [:index]
   resources :restaurants, only: [:index, :show]
