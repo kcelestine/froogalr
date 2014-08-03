@@ -1,5 +1,9 @@
+require 'factual'
+
 User.destroy_all
 Restaurant.destroy_all
+# factual = Factual.new("i2QUDTeWUBXZbdWWbQPalZSzA6j9tAMDqZrDUyZ1", "itaErFdFFAPzQ3qdabypTm2hvf1mPJ2ZWwFhtixT")
+# binding.pry
 
 testuser = User.create(
   first_name: "John",
@@ -66,6 +70,8 @@ zip_codes = [
 
 
 zip_codes.each do |zip|
+
+  # restaurant_info_hash = factual.table("restaurants").filters({:country => "US", :price => 1, :postcode => zip}).limit(10)
   restaurant_info_hash = Factual.restaurant_info(zip)
   restaurant_info_hash.each do |restaurant|
     Restaurant.create(
@@ -80,5 +86,4 @@ zip_codes.each do |zip|
       hours: restaurant["hours_display"]
     )
   end
-  sleep(0.5)
 end
