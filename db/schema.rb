@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140803225104) do
+ActiveRecord::Schema.define(version: 20140804140840) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20140803225104) do
     t.string  "website"
     t.string  "cuisine"
     t.text    "hours"
+    t.string  "factual_id"
   end
 
   create_table "restaurants_users", id: false, force: true do |t|
