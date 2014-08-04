@@ -4,5 +4,5 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :restaurants
 
   validates_presence_of :first_name, :last_name, :username, :email_address, :password, :password_confirmation
-  validates_uniqueness_of :username
+  validates_uniqueness_of :username, :email_address
 end
