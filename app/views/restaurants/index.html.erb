@@ -1,3 +1,7 @@
+<%= form_tag('/search', remote: true, method: :get) do %>
+  <p><%= text_field_tag :search %><p>
+  <p><%= submit_tag 'Search By Zip Code' %></p>
+<% end %>
 <% google_maps_key = ENV["GOOGLE_MAPS_KEY"] %>
 <style type="text/css">
       html { height: 100% }
