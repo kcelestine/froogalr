@@ -85,7 +85,8 @@ zip_codes.each do |zip|
       telephone: restaurant["tel"],
       website: restaurant["website"],
       cuisine: restaurant["cuisine"][0],
-      hours: restaurant["hours_display"]
+      hours: restaurant["hours_display"],
+      factual_id: restaurant["factual_id"]
     )
   end
   sleep(1)
