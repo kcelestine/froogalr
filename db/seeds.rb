@@ -2,9 +2,9 @@ require 'factual'
 
 User.destroy_all
 Restaurant.destroy_all
-FACTUAL_KEY = ENV["FACTUAL_API_KEY"]
-FACTUAL_SECRET = ENV["FACTUAL_API_SECRET"]
-factual = Factual.new("#{FACTUAL_API_KEY}", "#{FACTUAL_API_SECRET}")
+factual_api_key = ENV["FACTUAL_API_KEY"]
+factual_api_secret = ENV["FACTUAL_API_SECRET"]
+factual = Factual.new("factual_api_key", "factual_api_secret")
 # binding.pry
 
 testuser = User.create(
