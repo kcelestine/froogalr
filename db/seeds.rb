@@ -71,8 +71,8 @@ zip_codes = [
 
 zip_codes.each do |zip|
 
-  # restaurant_info_hash = factual.table("restaurants").filters({:country => "US", :price => 1, :postcode => zip}).limit(10)
-  restaurant_info_hash = Factual.restaurant_info(zip)
+  restaurant_info_hash = factual.table("restaurants").filters({:country => "US", :price => 1, :postcode => zip}).limit(50)
+  # restaurant_info_hash = Factual.restaurant_info(zip)
   restaurant_info_hash.each do |restaurant|
     Restaurant.create(
       name: restaurant["name"],
@@ -86,4 +86,5 @@ zip_codes.each do |zip|
       hours: restaurant["hours_display"]
     )
   end
+  sleep(1)
 end
