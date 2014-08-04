@@ -1,0 +1,10 @@
+<div class="restaurant-list">
+  <h1>ALL THE RESTAURANTSSS!!!!</h1>
+  <ol>
+    <% @restaurants.each do |restaurant| %>
+      <li>
+        <%= link_to("#{restaurant.name} - #{restaurant.zip_code}", restaurant_path(restaurant)) %>
+      </li>
+    <% end %>
+  </ol>
+</div>

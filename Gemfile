@@ -40,6 +40,7 @@ group :development, :test  do
   gem 'awesome_print'
   gem 'shoulda-matchers', require: false
   gem 'rspec-collection_matchers'
+  gem 'factual-api'
 end
 
 # Use ActiveModel has_secure_password
@@ -53,4 +54,3 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
