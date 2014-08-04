@@ -1,0 +1,13 @@
+console.log("HOWDY!");
+var restaurants = [<%= @restaurants %>]
+console.log(restaurants);
+
+
+for (var i = 0; i < restaurants.length; i++) {
+  var myLatlng = new google.maps.LatLng([i].latitude,[i].longitude);
+  var marker = new google.maps.Marker({
+    position: myLatlng,
+    map: map,
+    title: [i].name
+  });
+};
