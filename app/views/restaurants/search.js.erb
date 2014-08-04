@@ -4,12 +4,28 @@ function mapIt(){
 
   for (var i = 0; i < restaurants.length; i++) {
     var myLatlng = new google.maps.LatLng(restaurants[i].latitude,restaurants[i].longitude);
+
+    var myinfowindow = new google.maps.InfoWindow({
+      content: restaurants[i].name + restaurants[i].address
+    });
+
     console.log(myLatlng);
     var marker = new google.maps.Marker({
       position: myLatlng,
       map: map,
-      title: restaurants[i].name
+      title: restaurants[i].name,
+      infowindow: myinfowindow
     });
+
+
+
+    google.maps.event.addListener(marker, 'click', function() {
+      this.infowindow.open(map, this);
+      infowindow.remove();
+    });
+
+
+
     console.log(marker);
   };
 }
