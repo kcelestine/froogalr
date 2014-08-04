@@ -40,7 +40,7 @@ group :development, :test  do
   gem 'awesome_print'
   gem 'shoulda-matchers', require: false
   gem 'rspec-collection_matchers'
-  # gem 'factual-api'
+  gem 'factual-api'
 end
 
 # Use ActiveModel has_secure_password
