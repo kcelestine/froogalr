@@ -2,7 +2,7 @@ require 'factual'
 
 User.destroy_all
 Restaurant.destroy_all
-# factual = Factual.new("i2QUDTeWUBXZbdWWbQPalZSzA6j9tAMDqZrDUyZ1", "itaErFdFFAPzQ3qdabypTm2hvf1mPJ2ZWwFhtixT")
+factual = Factual.new("i2QUDTeWUBXZbdWWbQPalZSzA6j9tAMDqZrDUyZ1", "itaErFdFFAPzQ3qdabypTm2hvf1mPJ2ZWwFhtixT")
 # binding.pry
 
 testuser = User.create(
