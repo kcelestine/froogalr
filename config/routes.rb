@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get   '/login'        => 'sessions#new'
   post  '/sessions'     => 'sessions#create'
   get   '/logout'       => 'sessions#destroy'
+  get '/search'         => 'restaurants#search'
 
   resources :users, except: [:index]
   resources :restaurants, only: [:index, :show]
