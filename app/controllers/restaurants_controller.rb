@@ -9,6 +9,7 @@ class RestaurantsController < ApplicationController
   end
 
   def search 
-    @restaurants = Restaurant.where("zip_code = '#{params[:zip_code]}'")
+    zip = params[:search]
+    @restaurants = Restaurant.where_zip(zip).to_json.html_safe
   end
 end

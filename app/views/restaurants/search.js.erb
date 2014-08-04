@@ -1,7 +1,5 @@
-console.log("HOWDY!");
-var restaurants = [<%= @restaurants %>]
+var restaurants = <%= @restaurants %>;
 console.log(restaurants);
-
 
 for (var i = 0; i < restaurants.length; i++) {
   var myLatlng = new google.maps.LatLng([i].latitude,[i].longitude);
@@ -11,3 +9,4 @@ for (var i = 0; i < restaurants.length; i++) {
     title: [i].name
   });
 };
+
