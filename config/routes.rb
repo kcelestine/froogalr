@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   # Welcome
   get "/"               => 'welcome#index', as: 'root'
-  get   '/login'        => 'sessions#new'
-  post  '/sessions'     => 'sessions#create'
-  get   '/logout'       => 'sessions#destroy'
   get '/search'         => 'restaurants#search'
 
   resources :users, except: [:index]

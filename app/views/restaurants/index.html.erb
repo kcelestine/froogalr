@@ -2,14 +2,8 @@
   <p><%= text_field_tag :search %><p>
   <p><%= submit_tag 'Search By Zip Code' %></p>
 <% end %>
-<% google_maps_key = ENV["GOOGLE_MAPS_KEY"] %>
-<style type="text/css">
-      html { height: 100% }
-      body { height: 100%; margin: 0; padding: 0 }
-      #map-canvas { height: 100% }
-    </style>
-        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 
+<% google_maps_key = ENV["GOOGLE_MAPS_KEY"] %>
 <script type="text/javascript"
   src="https://maps.googleapis.com/maps/api/js?key=<%= google_maps_key %>">
 </script>
@@ -25,7 +19,8 @@
       }
       google.maps.event.addDomListener(window, 'load', initialize);
       mapIt();
-    </script>
+</script>
+
 <div id="map-canvas"></div>
 
 <div class="restaurant-list">
