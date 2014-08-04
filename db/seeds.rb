@@ -4,7 +4,7 @@ User.destroy_all
 Restaurant.destroy_all
 factual_api_key = ENV["FACTUAL_API_KEY"]
 factual_api_secret = ENV["FACTUAL_API_SECRET"]
-factual = Factual.new("factual_api_key", "factual_api_secret")
+factual = Factual.new("#{factual_api_key}", "#{factual_api_secret}")
 # binding.pry
 
 testuser = User.create(
