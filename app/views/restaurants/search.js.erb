@@ -1,17 +1,40 @@
+// var markers = [];
+
+// function addMarker(location) {
+//   var marker = new google.maps.Marker({
+//     position: location,
+//     map: map
+//   });
+//   markers.push(marker);
+// }
+
+// function setAllMap(map) {
+//   var markers = <%= @restaurants %>;
+//   for (var i = 0; i < markers.length; i++) {
+//     markers[i].setMap(map);
+//   }
+// }
+
+// function showMarkers() {
+//   setAllMap(map);
+// }
+
+// function clearMarkers() {
+//   setAllMap(null);
+// }
+
 function mapIt(){
   var restaurants = <%= @restaurants %>;
-  console.log(restaurants);
-
   for (var i = 0; i < restaurants.length; i++) {
     var myLatlng = new google.maps.LatLng(restaurants[i].latitude,restaurants[i].longitude);
-    console.log(myLatlng);
     var marker = new google.maps.Marker({
       position: myLatlng,
       map: map,
       title: restaurants[i].name
     });
-    console.log(marker);
+    markers.push(marker);
   };
 }
 
+// clearMarkers();
 mapIt();
