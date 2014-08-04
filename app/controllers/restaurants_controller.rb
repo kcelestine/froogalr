@@ -8,4 +8,7 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
   end
 
+  def search 
+    @restaurants = Restaurant.where("zip_code = '#{params[:zip_code]}'")
+  end
 end
