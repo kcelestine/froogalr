@@ -22,4 +22,22 @@ feature 'User logs in' do
     sign_out
   end
 
+  scenario 'and can view other users profiles' do
+  end
+
+  scenario 'and cannot edit other users profiles' do
+  end
+
+  scenario 'and can like restaurants' do
+  end
+
+  scenario 'and can unlike restaurants' do
+  end
+
+  scenario 'and can review restaurants' do
+  end
+
+  scenario 'and can edit a previously left review' do
+  end
+
 end

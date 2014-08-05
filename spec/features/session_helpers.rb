@@ -16,6 +16,9 @@ module Features
       click_on 'Log In' # POST /users
     end
 
+    def sign_out
+      click_on 'Log Out'
+    end
 
   end
 end
