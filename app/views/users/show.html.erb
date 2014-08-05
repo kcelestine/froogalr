@@ -5,7 +5,7 @@
 <h3>Name: <%= "#{@user.first_name} #{@user.last_name}" %></h3>
 
 <div class="favorites">
-  <h3 id="favorites">Favorites</h3>
+  <h3 id="favorites-header">Favorites</h3>
     <ul class="favorites-list">
       <% @user.restaurants.each do |restaurant| %>
         <li class= "favorite-restaurant"><%= link_to(restaurant.name, restaurant_path(restaurant)) %></li>
@@ -14,7 +14,7 @@
 </div>
 
 <div class="reviews">
-  <h3 id="reviews">Reviews</h3>
+  <h3 id="reviews-header">Reviews</h3>
     <div class="reviews-list">
       <% @user.reviews.each do |review| %>
         <div class="restaurant-name"><%= review.restaurant.name %></div>
