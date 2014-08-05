@@ -4,7 +4,7 @@
 <h2 class="username"><%= @user.username %></h2>
 <h3>Name: <%= "#{@user.first_name} #{@user.last_name}" %></h3>
 
-<div class="favorites">
+<div id="user-favorites">
   <h3 id="favorites-header">Favorites</h3>
     <ul class="favorites-list">
       <% @user.restaurants.each do |restaurant| %>
@@ -13,9 +13,9 @@
     </ul>
 </div>
 
-<div class="reviews">
+<div id="user-reviews">
   <h3 id="reviews-header">Reviews</h3>
-    <div class="reviews-list">
+    <div class="reviews">
       <% @user.reviews.each do |review| %>
         <div class="restaurant-name"><%= review.restaurant.name %></div>
         <div class="comment"><%= review.comment %></div>
