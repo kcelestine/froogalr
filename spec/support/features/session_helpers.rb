@@ -3,8 +3,8 @@ module Features
     def log_in
       user = create(:user)
       visit root_path
-      fill_in 'Username', with user.email
-      fill_in 'Password', with user.password
+      fill_in 'Username', with: user.email
+      fill_in 'Password', with: user.password
       click_button 'Log In'
     end
     
