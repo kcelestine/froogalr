@@ -12,4 +12,9 @@ class RestaurantsController < ApplicationController
     zip = params[:search]
     @restaurants = Restaurant.where_zip(zip).to_json.html_safe
   end
+
+  def addToFavorites
+    @restaurant = Restaurant.find(params[:id])
+  end
+  
 end

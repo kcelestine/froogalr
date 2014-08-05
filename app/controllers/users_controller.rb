@@ -27,7 +27,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to(user_path(@user))
-      flash[:notice] = "Your acocunt has been updated."
     else
       render(:edit)
     end
@@ -38,12 +37,11 @@ class UsersController < ApplicationController
     @user.destroy
     session[:current_user] = nil
     redirect_to(root_path)
-    flash[:notice] = "Your account has been deleted."
   end
 
   private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :username, :email_address, :password, :password_confirmation)
+    params.require(:user).permit(:first_name, :last_name, :username, :email, :encrypted_password)
   end
 
 end
