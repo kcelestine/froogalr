@@ -24,24 +24,6 @@
       map: map,
       title: '<%= @restaurant.name %>'
   });
-  //Content structure of info Window for the Markers
-  var contentString = $('<div class="marker-info-win">'+
-  '<div class="marker-inner-win"><span class="info-content">'+
-  '<h1 class="marker-heading">New Marker</h1>'+
-  '<%= @restaurant.name %>'+
-  '</span>'+
-  '</div></div>');
-
-  //Create an infoWindow
-  var infowindow = new google.maps.InfoWindow();
-
-  //set the content of infoWindow
-  infowindow.setContent(contentString[0]);
-
-  //add click event listener to marker which will open infoWindow
-  google.maps.event.addListener(marker, 'click', function() {
-      infowindow.open(map,marker); // click on marker opens info window
-  });
 
 }
 
