@@ -19,5 +19,5 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
     @user.restaurants << @restaurant
   end
-
+  
 end
