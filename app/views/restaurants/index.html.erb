@@ -5,7 +5,7 @@
 
 <% google_maps_key = ENV["GOOGLE_MAPS_KEY"] %>
 <script type="text/javascript"
-  src="https://maps.googleapis.com/maps/api/js?key=<%= google_maps_key %>">
+  src="https://maps.googleapis.com/maps/api/js?key=<%= google_maps_key %>&callback=initialize">
 </script>
 
 <script type="text/javascript">

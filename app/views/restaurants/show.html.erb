@@ -27,7 +27,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 <%= form_tag('/favorite', remote: true, method: :post) do %>
   <%= hidden_field_tag(:restaurant_id, @restaurant.id) %>
-  <p><%= submit_tag 'Favorite' %></p>
+  <p><%= submit_tag 'Favorite', :id=> "favorite-button" %></p>
 <% end %>
 
 <h2><%= @restaurant.name %></h2>
