@@ -1,17 +1,30 @@
+
 function mapIt(){
+  var currentInfoWindow;
   var restaurants = <%= @restaurants %>;
-  console.log(restaurants);
 
   for (var i = 0; i < restaurants.length; i++) {
     var myLatlng = new google.maps.LatLng(restaurants[i].latitude,restaurants[i].longitude);
-    console.log(myLatlng);
+
+    myinfowindow = new google.maps.InfoWindow({
+      content: '<p>'+ restaurants[i].name +'</p>' + '<p>'+ restaurants[i].address +'</p>'  + '<a href="/restaurants/' + restaurants[i].id + '">More Info</a>'
+
+    });
     var marker = new google.maps.Marker({
       position: myLatlng,
       map: map,
-      title: restaurants[i].name
+      title: restaurants[i].name,
+      infowindow: myinfowindow,
     });
-    console.log(marker);
+    // markers.push(marker);
+    google.maps.event.addListener(marker, 'click', function() {
+      if (currentInfoWindow !== undefined) {
+        currentInfoWindow.close();
+      }
+      this.infowindow.open(map, this);
+      currentInfoWindow = this.infowindow;
+    });
+
   };
 }
-
 mapIt();
