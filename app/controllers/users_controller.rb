@@ -41,7 +41,7 @@ class UsersController < ApplicationController
 
   def addFavorite
     @user = User.find(current_user)
-    @restaurant = Restaurant.find(params[:id])
+    @restaurant = Restaurant.find(params[:restaurant_id])
     @user.restaurants << @restaurant
   end
 
