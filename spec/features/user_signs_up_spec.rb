@@ -1,7 +1,7 @@
 # Feature: Sign up
-# #   As a user 
-# #   I want to sign up
-# #   So I can visit protected areas of the site
+#  As a user 
+#  I want to sign up
+#  So I can visit protected areas of the site
 
 feature 'Visitor signs up' do
   before(:each) do
