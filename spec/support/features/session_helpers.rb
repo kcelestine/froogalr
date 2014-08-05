@@ -1,6 +1,6 @@
 module Features
   module SessionHelpers
-    def sign_in
+    def log_in
       user = create(:user)
       visit root_path
       fill_in 'Username', with user.email
@@ -16,7 +16,7 @@ module Features
       click_on 'Log In' # POST /users
     end
 
-    def sign_out
+    def log_out
       click_on 'Log Out'
     end
 
