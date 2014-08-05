@@ -13,9 +13,10 @@ body {
 }
 
 #map-canvas {
-  height: 100%;
   position:relative;
 }
+
+.index-map {height: 100%;}
 
 
 div#map-modal {
@@ -44,3 +45,5 @@ span#close {
   color: white;
   font-size: 30px;
 }
+
+.restaurant-show-map {width: 750px;margin: 0 auto;height: 350px;}

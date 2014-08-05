@@ -15,7 +15,7 @@ class RestaurantsController < ApplicationController
 
   def addFavorite
     @user = User.find(current_user)
-    binding.pry
+    # binding.pry
     @restaurant = Restaurant.find(params[:restaurant_id])
     @user.restaurants << @restaurant
   end
