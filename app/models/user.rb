@@ -7,6 +7,6 @@ class User < ActiveRecord::Base
   has_many :reviews, dependent: :destroy
   has_and_belongs_to_many :restaurants
 
-  validates_presence_of :first_name, :last_name, :username, :password, :password_confirmation
+  validates_presence_of :first_name, :last_name, :username, :encrypted_password
   validates_uniqueness_of :username
 end
