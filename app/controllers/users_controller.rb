@@ -9,15 +9,15 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def create 
+  def create
     @user = User.new(user_params)
-    if @user.save 
+    if @user.save
       session[:current_user] = @user.id
       redirect_to(root_path)
     else
       render(:new)
     end
-  end 
+  end
 
   def edit
     @user = User.find(params[:id])
@@ -39,13 +39,18 @@ class UsersController < ApplicationController
     redirect_to(root_path)
   end
 
-  def addFavorite
-    @user = User.find(current_user)
-    @restaurant = Restaurant.find(params[:restaurant_id])
-    @user.restaurants << @restaurant
+  def add_favorite
+    @restaurant = Restaurant.find(params[:id])
+    current_user.favorite(@restaurant)
+  end
+
+  def remove_favorite
+    @restaurant = Restaurant.find(params[:id])
+    current_user.unfavorite(@restaurant)
   end
 
   private
+
   def user_params
     params.require(:user).permit(:first_name, :last_name, :username, :email, :encrypted_password)
   end

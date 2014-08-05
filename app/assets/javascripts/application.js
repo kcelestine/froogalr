@@ -32,7 +32,6 @@ function loadScript() {
 }
 
 function unfavorite() {
-  var unfavoriteButton = $('#favorite-button').val('Unfavorite').attr('id', 'unfavorite-button');
+  // var unfavoriteButton = $('#favorite-button').val('Unfavorite').attr('id', 'unfavorite-button');
 
 }
-unfavorite();
