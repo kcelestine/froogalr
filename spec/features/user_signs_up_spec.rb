@@ -24,7 +24,6 @@ feature 'Visitor signs up' do
   end
 
   def sign_up_with(username, f_name, l_name, email, password)
-    save_and_open_page
     visit restaurants_path
     click_on 'Sign Up' # GET /users/new
     fill_in 'Username', with: username
