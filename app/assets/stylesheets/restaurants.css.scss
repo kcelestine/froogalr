@@ -21,13 +21,22 @@ body {
 div#map-modal {
   position: absolute;
   z-index: 10;
-  background: rgba(0,0,0,.8);
-  height: 500px;
-  width: 500px;
+
+  height: 100%;
+  width: 100%;
   display:none;
+  top: 0;
+  left: 0;
+}
+
+#map-modal #modal-content {
+  background: rgba(0,0,0,.8);
   color: whitesmoke;
-  top:20%;
-  left:30%;
+  width: 500px;
+  height: 500px;
+  left: 20%;
+  top: 20%;
+  position:absolute;
 }
 
 span#close {

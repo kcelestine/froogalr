@@ -1,5 +1,5 @@
 $(function() {
-  $('body').on('click', '#close', hideModal);
+  $('body').on('click', '#map-modal', hideModal);
 });
 function mapIt(){
   var currentInfoWindow;
@@ -41,6 +41,7 @@ function mapIt(){
 }
 
 function hideModal() {
+  console.log('hi');
   $('#map-modal').find('div').empty();
   $("#map-modal").hide();
 }
