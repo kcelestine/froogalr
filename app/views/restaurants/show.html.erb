@@ -50,3 +50,12 @@ google.maps.event.addDomListener(window, 'load', initialize);
   <%= @restaurant.hours %>
 </p>
 <div id="map-canvas" class="restaurant-show-map"></div>
+
+<%= render 'reviews/form' %>
+
+<% @restaurant.reviews.each do |review| %>
+  <%= link_to(review.user.username, user_path(review.user.id)) %>
+  <%= review.worth_it %>
+  <%= review.comment %>
+<% end %>
+
