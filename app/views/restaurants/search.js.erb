@@ -1,12 +1,15 @@
+
 function mapIt(){
+  var currentInfoWindow;
   var restaurants = <%= @restaurants %>;
   console.log(restaurants);
 
   for (var i = 0; i < restaurants.length; i++) {
     var myLatlng = new google.maps.LatLng(restaurants[i].latitude,restaurants[i].longitude);
 
-    var myinfowindow = new google.maps.InfoWindow({
+    myinfowindow = new google.maps.InfoWindow({
       content: restaurants[i].name + restaurants[i].address
+
     });
 
     console.log(myLatlng);
@@ -14,17 +17,16 @@ function mapIt(){
       position: myLatlng,
       map: map,
       title: restaurants[i].name,
-      infowindow: myinfowindow
+      infowindow: myinfowindow,
     });
-
-
 
     google.maps.event.addListener(marker, 'click', function() {
+      if (currentInfoWindow !== undefined) {
+        currentInfoWindow.close();
+      }
       this.infowindow.open(map, this);
-      infowindow.remove();
+      currentInfoWindow = this.infowindow;
     });
-
-
 
     console.log(marker);
   };
