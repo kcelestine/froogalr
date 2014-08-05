@@ -1,5 +1,5 @@
 # Feature: Sign up
-# #   As a visitor
+# #   As a user 
 # #   I want to sign up
 # #   So I can visit protected areas of the site
 
