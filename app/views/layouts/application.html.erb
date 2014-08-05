@@ -7,18 +7,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if user_signed_in? %>
-  Welcome back, <%= current_user.first_name %>! |
-  <%= link_to('Sign out', destroy_user_session_path, method: :delete)%> |    
-  <%= link_to('Edit Account', edit_user_registration_path) %> |
-  <%= link_to('My Profile', user_path(current_user)) %> |
-<% else %>
-  <%= link_to('Sign in', new_user_session_path) %> |
-  <%= link_to('Sign up', new_user_registration_path) %> |
-<% end %>
-<%= link_to('Restaurants', restaurants_path) %>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<%= yield %>
+<header id="main-header">
+  <div id="header-block">
+    <h1><%= link_to('froogalr', root_path) %></h1>
+    <div id="header-content">
+      <% if user_signed_in? %>
+        Welcome back, <%= current_user.first_name %>! |
+        <%= link_to('Sign out', destroy_user_session_path, method: :delete)%> |
+        <%= link_to('Edit Account', edit_user_registration_path) %> |
+        <%= link_to('My Profile', user_path(current_user)) %> |
+      <% else %>
+        <%= link_to('Sign in', new_user_session_path) %> |
+        <%= link_to('Sign up', new_user_registration_path) %> |
+      <% end %>
+      <%= link_to('Restaurants', restaurants_path) %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
+  </div>
+</header>
+<div id="main-content">
+  <%= yield %>
+</div>
 </body>
 </html>

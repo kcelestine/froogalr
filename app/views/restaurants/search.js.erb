@@ -24,11 +24,11 @@ function mapIt(){
       var modalContent = $('#modal-content');
       modalContent.empty();
       modal.show();
-      var restaurantInfo = $('<p>'+ this.title +'</p>'
+      var restaurantInfo = $('<div id="restaurant-information">' + '<h3>'+ this.title +'</h3>'
                            + '<p>'+ this.address + ' ' + this.zip +'</p>'
                            + '<p>'+ this.telephone +'</p>'
                            + '<a href="'+ this.website +'" target="_blank">'+ this.website +'</p>'
-                           + '<a href="/restaurants/' + this.id + '">More Info</a>');
+                           + '<a href="/restaurants/' + this.id + '">More Info</a>'+ '</div>');
       modalContent.append(restaurantInfo);
       if (currentInfoWindow !== undefined) {
         currentInfoWindow.close();

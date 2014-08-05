@@ -1,3 +1,7 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {background: #f3f3f3;}
+#user-show-content {width: 1000px;margin: 30px auto;background: #FFF;padding: 30px;box-shadow: 0 0 0 1px rgba(0,0,0,.04),0 1px 5px rgba(0,0,0,.1);}
+#user-show-content h2 {margin: 0;}

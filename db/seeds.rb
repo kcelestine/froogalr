@@ -70,10 +70,10 @@ zip_codes = [
   10040
 ]
 
-
 zip_codes.each do |zip|
 
   restaurant_info_hash = factual.table("restaurants").filters({:country => "US", :price => 1, :postcode => zip}).limit(10)
+
   # restaurant_info_hash = Factual.restaurant_info(zip)
   restaurant_info_hash.each do |restaurant|
     Restaurant.create(

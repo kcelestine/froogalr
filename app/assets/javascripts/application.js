@@ -30,8 +30,3 @@ function loadScript() {
   script.type = 'text/javascript';
   document.body.appendChild(script);
 }
-
-function unfavorite() {
-  // var unfavoriteButton = $('#favorite-button').val('Unfavorite').attr('id', 'unfavorite-button');
-
-}
