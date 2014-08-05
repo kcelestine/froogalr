@@ -39,6 +39,12 @@ class UsersController < ApplicationController
     redirect_to(root_path)
   end
 
+  def addFavorite
+    @user = User.find(current_user)
+    @restaurant = Restaurant.find(params[:id])
+    @user.restaurants << @restaurant
+  end
+
   private
   def user_params
     params.require(:user).permit(:first_name, :last_name, :username, :email, :encrypted_password)

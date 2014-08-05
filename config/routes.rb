@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
   devise_for :users
+  
   # Welcome
-  get "/"               => 'welcome#index', as: 'root'
-  get '/search'         => 'restaurants#search'
+  get "/"                  => 'welcome#index', as: 'root'
+  get '/search'            => 'restaurants#search'
+  post '/favorite'         => 'restaurants#addFavorite'
 
   resources :users, except: [:index]
   resources :restaurants, only: [:index, :show]
