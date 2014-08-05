@@ -3,7 +3,7 @@
 #  I want to sign up
 #  So I can visit protected areas of the site
 
-feature 'Visitor signs up' do
+feature 'User signs up' do
   before(:each) do
     visit restaurants_path
   end
