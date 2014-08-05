@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 # Feature: Log in 
 #  As a user 
 #  I want to log in
@@ -5,7 +7,7 @@
 
 feature 'User logs in' do
   before(:each) do
-    log_in 'khadijahcc', 'password'
+    log_in
   end
 
   after(:each) do
