@@ -39,11 +39,11 @@
   <p><a href="<%= @restaurant.website %>" target="_blank"><%= @restaurant.website %></a></p>
   <p>Cuisine: <%= @restaurant.cuisine %></p>
   <p>Time: <%= @restaurant.hours %></p>
+
   <!-- 5 - Totally Worth it 4 - Pretty Worth it 3 - Kinda Worth it 2 - Not Worth It  1 - Meh! -->
   <p class="<%= @restaurant.reviews.average(:worth_it).round %>">
     <span class="rating"><%= rating = @restaurant.reviews.average(:worth_it).round %></span>
     <%= @restaurant.worth_it_rating(rating) %>
-    <%#= @restaurant.reviews.worth_it_rating %>
   </p>
   <p><a href="<%= @restaurant.yelp %>" target="_blank">Yelp</a></p>
   <p><a href="<%= @restaurant.seamless %>" target="_blank">Seamless</a></p>
@@ -51,7 +51,7 @@
   <div id="map-canvas" class="restaurant-show-map"></div>
 
 
-  <div id="user-review">
+  <div id="reviews_container">
     <% if user_signed_in? %>
       <%= render 'reviews/form' %>
     <% end %>
