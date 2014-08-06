@@ -57,6 +57,20 @@ zip_codes.each do |zip|
 
   restaurant_info_hash = factual.table("restaurants").filters({:country => "US", :price => 1, :postcode => zip}).limit(10)
   # restaurant_info_hash = Factual.restaurant_info(zip)
+  restaurant_info_hash.each do |restaurant|
+    Restaurant.create(
+      name: restaurant["name"],
+      address: restaurant["address"],
+      latitude: restaurant["latitude"],
+      longitude: restaurant["longitude"],
+      zip_code: restaurant["postcode"],
+      telephone: restaurant["tel"],
+      website: restaurant["website"],
+      cuisine: restaurant["cuisine"][0],
+      hours: restaurant["hours_display"],
+      factual_id: restaurant["factual_id"]
+    )
+  end
     restaurant_info_hash.each do |restaurant|
       
       seamless_hash = crosswalk.table("crosswalk").filters(:factual_id => restaurant["factual_id"],:namespace => { "$in" => [:seamless] })

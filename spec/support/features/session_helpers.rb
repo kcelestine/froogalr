@@ -17,6 +17,9 @@ module Features
       click_on 'Log In' # POST /users
     end
 
+    def sign_up
+    # A message with a confirmation link has been sent to your email address. Please open the link to activate your account
+    end
     def log_out
       click_on 'Sign out'
     end
