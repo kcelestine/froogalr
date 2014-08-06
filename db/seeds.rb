@@ -76,6 +76,8 @@ zip_codes.each do |zip|
 
   # restaurant_info_hash = Factual.restaurant_info(zip)
   restaurant_info_hash.each do |restaurant|
+    fact_id = restaurant["factual_id"]
+    http://api.v3.factual.com/t/crosswalk?filters={"factual_id":"57ddbca5-a669-4fcf-968f-a1c8210a479a"}
     Restaurant.create(
       name: restaurant["name"],
       address: restaurant["address"],
