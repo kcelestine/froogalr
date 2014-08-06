@@ -41,7 +41,7 @@ group :development, :test  do
   gem 'shoulda-matchers', require: false
   gem 'rspec-collection_matchers'
   gem 'factual-api'
-  gem 'factory_girl_rails', require: false
+  gem 'factory_girl_rails'
 end
 
 gem 'devise'
