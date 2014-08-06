@@ -1,20 +1,26 @@
 require 'rails_helper'
 
-# Feature: Log in 
-#  As a user 
+# Feature: Log in
+#  As a user
 #  I want to log in
 #  So I can review and favorite restaurants
 
 feature 'User logs in' do
   before(:each) do
-    log_in
+    # log_in
   end
 
   after(:each) do
-    log_out
+    # log_out
   end
 
   scenario 'with valid information' do
+    user = FactoryGirl.create(:user)
+    visit root_path
+    click_on 'Sign in'
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    expect(page).to have_content('Sign out')
   end
 
   scenario 'with invalid username or password' do
