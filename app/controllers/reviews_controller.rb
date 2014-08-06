@@ -6,7 +6,6 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new
-    binding.pry
     @review.worth_it = params[:worth_it]
     @review.comment = params[:comment]
     @review.user_id = current_user.id

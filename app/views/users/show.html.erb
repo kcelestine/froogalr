@@ -5,9 +5,13 @@
   <div id="user-favorites">
     <h3 id="favorites-header">Favorites</h3>
       <ul class="favorites-list">
+      <% if @user.restaurants.count < 1 %>
+      <li>This user has no favorites</li>
+      <% else %>
         <% @user.restaurants.each do |restaurant| %>
           <li class= "favorite-restaurant"><%= link_to(restaurant.name, restaurant_path(restaurant)) %></li>
         <% end %>
+      <% end %>
       </ul>
   </div>
 
@@ -15,7 +19,6 @@
     <h3 id="reviews-header">Reviews</h3>
       <div class="reviews">
         <% @user.reviews.each do |review| %>
-          <div class="restaurant-name"><%= review.restaurant.name %></div>
           <div class="comment"><%= review.comment %></div>
           <div class="worth-it"><%= review.worth_it %></div>
         <% end %>
