@@ -16,14 +16,13 @@ function mapIt(){
       zip: restaurants[i].zip_code,
       telephone: restaurants[i].telephone,
       website: restaurants[i].website,
-      cuisine: restaurants[i].cuisine,
-      reviews: restaurants[i].reviews.id
+      cuisine: restaurants[i].cuisine
     });
     google.maps.event.addListener(marker, 'click', function() {
       var modal = $('#map-modal');
       var modalContent = $('#modal-content');
       modalContent.empty();
-      console.log(this.reviews);
+      console.log(this.latitude);
       var restaurantInfo = $('<div id="restaurant-information">' + '<h3>'+ this.title +'</h3>'
                            + '<p>'+ this.address + ' ' + this.zip +'</p>'
                            + '<p>'+ this.telephone +'</p>'
