@@ -1,11 +1,12 @@
 module Features
   module SessionHelpers
     def log_in
-      user = create(:user)
+      user = FactoryGirl.create(:user)
       visit root_path
-      fill_in 'Username', with: user.email
+      click_on 'Sign in'
+      fill_in 'Email', with: user.email
       fill_in 'Password', with: user.password
-      click_button 'Log In'
+      click_button 'Sign in'
     end
     
     def log_in_with(username, password)
@@ -17,7 +18,7 @@ module Features
     end
 
     def log_out
-      click_on 'Log Out'
+      click_on 'Sign out'
     end
 
   end

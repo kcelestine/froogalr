@@ -1,29 +1,43 @@
+$(function() {
+  $('body').on('click', '#map-modal', hideModal);
+});
 function mapIt(){
-  var currentInfoWindow;
   var restaurants = <%= @restaurants %>;
 
   for (var i = 0; i < restaurants.length; i++) {
     var myLatlng = new google.maps.LatLng(restaurants[i].latitude,restaurants[i].longitude);
 
-    myinfowindow = new google.maps.InfoWindow({
-      content: '<p>'+ restaurants[i].name +'</p>' + '<p>'+ restaurants[i].address +'</p>'  + '<a href="/restaurants/' + restaurants[i].id + '">More Info</a>'
-
-    });
     var marker = new google.maps.Marker({
       position: myLatlng,
       map: map,
       title: restaurants[i].name,
-      infowindow: myinfowindow,
+      address: restaurants[i].address,
+      id: restaurants[i].id,
+      zip: restaurants[i].zip_code,
+      telephone: restaurants[i].telephone,
+      website: restaurants[i].website,
+      cuisine: restaurants[i].cuisine
     });
-    // markers.push(marker);
     google.maps.event.addListener(marker, 'click', function() {
-      if (currentInfoWindow !== undefined) {
-        currentInfoWindow.close();
-      }
-      this.infowindow.open(map, this);
-      currentInfoWindow = this.infowindow;
+      var modal = $('#map-modal');
+      var modalContent = $('#modal-content');
+      modalContent.empty();
+      var restaurantInfo = $('<div id="restaurant-information">' + '<h3>'+ this.title +'</h3>'
+                           + '<p>'+ this.address + ' ' + this.zip +'</p>'
+                           + '<p>'+ this.telephone +'</p>'
+                           + (this.website === null ? '' : ('<a href="'+ this.website +'" target="_blank">'+ this.website +'</a>'))
+                           + '<a href="/restaurants/' + this.id + '">More Info</a>'+ '</div>');
+      modalContent.append(restaurantInfo);
+      modal.show();
     });
 
   };
 }
+
+function hideModal() {
+  console.log('hi');
+  $('#map-modal').find('div').empty();
+  $("#map-modal").hide();
+}
+
 mapIt();

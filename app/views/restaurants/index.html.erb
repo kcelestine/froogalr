@@ -1,15 +1,23 @@
-<%= form_tag('/search', remote: true, method: :get) do %>
+<%= form_tag('/search', remote: true, method: :get, id: 'map-search') do %>
   <p><%= text_field_tag :search %><p>
   <p><%= submit_tag 'Search By Zip Code' %></p>
 <% end %>
 
 <% google_maps_key = ENV["GOOGLE_MAPS_KEY"] %>
 <script type="text/javascript"
-  src="https://maps.googleapis.com/maps/api/js?key=<%= google_maps_key %>">
+  src="https://maps.googleapis.com/maps/api/js?key=<%= google_maps_key %>&callback=initialize">
 </script>
 
 <script type="text/javascript">
   window.onload = loadScript;
 </script>
 
-<div id="map-canvas"></div>
+<div id="map-canvas" class="index-map"></div>
+<div id="map-modal">
+  <span id="close">Close</span>
+  <div id="modal-content">
+    <div id="restaurant-information">
+
+    </div>
+  </div>
+</div>
