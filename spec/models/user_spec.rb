@@ -16,5 +16,5 @@ describe User do
   it { is_expected.to have_many(:reviews) }
   it { is_expected.to have_and_belong_to_many(:restaurants) }
 
-  end
+
 end

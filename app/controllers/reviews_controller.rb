@@ -6,11 +6,12 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new
+    binding.pry
     @review.worth_it = params[:worth_it]
     @review.comment = params[:comment]
     @review.user_id = current_user.id
     @review.restaurant_id = params[:restaurant_id]
-    @review.save 
+    @review.save
   end
 
   def edit
@@ -24,6 +25,6 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:user_id, :restaurant_id, :woth_it, :comment)
+    params.permit(:user_id, :restaurant_id, :woth_it, :comment)
   end
 end

@@ -2,7 +2,6 @@ $(function() {
   $('body').on('click', '#map-modal', hideModal);
 });
 function mapIt(){
-  var currentInfoWindow;
   var restaurants = <%= @restaurants %>;
 
   for (var i = 0; i < restaurants.length; i++) {
@@ -23,20 +22,13 @@ function mapIt(){
       var modal = $('#map-modal');
       var modalContent = $('#modal-content');
       modalContent.empty();
-      modal.show();
-      var restaurantWebsite =  this.website;
-      console.log(restaurantWebsite);
       var restaurantInfo = $('<div id="restaurant-information">' + '<h3>'+ this.title +'</h3>'
                            + '<p>'+ this.address + ' ' + this.zip +'</p>'
                            + '<p>'+ this.telephone +'</p>'
-                           + (restaurantWebsite === null ? '' : ('<a href="'+ restaurantWebsite +'" target="_blank">'+ restaurantWebsite +'</a>'))
+                           + (this.website === null ? '' : ('<a href="'+ this.website +'" target="_blank">'+ this.website +'</a>'))
                            + '<a href="/restaurants/' + this.id + '">More Info</a>'+ '</div>');
       modalContent.append(restaurantInfo);
-      if (currentInfoWindow !== undefined) {
-        currentInfoWindow.close();
-      }
       modal.show();
-      currentInfoWindow = this.modal;
     });
 
   };
