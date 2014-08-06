@@ -31,5 +31,4 @@ class User < ActiveRecord::Base
       self.restaurants.destroy(restaurant)
     end
   end
-  
 end
