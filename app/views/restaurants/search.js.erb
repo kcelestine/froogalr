@@ -22,6 +22,7 @@ function mapIt(){
       var modal = $('#map-modal');
       var modalContent = $('#modal-content');
       modalContent.empty();
+      console.log(this);
       var restaurantInfo = $('<div id="restaurant-information">' + '<h3>'+ this.title +'</h3>'
                            + '<p>'+ this.address + ' ' + this.zip +'</p>'
                            + '<p>'+ this.telephone +'</p>'

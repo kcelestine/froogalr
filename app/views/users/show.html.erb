@@ -19,6 +19,10 @@
     <h3 id="reviews-header">Reviews</h3>
       <div class="reviews">
         <% @user.reviews.each do |review| %>
+          <div>
+
+          </div>
+          <a href="/restaurants/<%= review.restaurant_id %>">Click to view the restaurant's page</a>
           <div class="comment"><%= review.comment %></div>
           <div class="worth-it"><%= review.worth_it %></div>
         <% end %>
