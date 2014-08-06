@@ -19,7 +19,7 @@ class RestaurantsController < ApplicationController
   #   @restaurant = Restaurant.find(params[:restaurant_id])
   #   @user.restaurants << @restaurant
   # end
-  #
+
   def add_favorite
     @restaurant = Restaurant.find(params[:id])
     current_user.favorite(@restaurant)

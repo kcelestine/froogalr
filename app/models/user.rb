@@ -10,16 +10,6 @@ class User < ActiveRecord::Base
   validates_presence_of :first_name, :last_name, :username, :email, :encrypted_password
   validates_uniqueness_of :username, :email
 
-  def self.hasRestaurant(user_id, restaurant_id)
-    user = User.find(user_id)
-    restaurant = Restaurant.find(restaurant_id)
-
-    restaurants_id = user.restaurants.map do |restaurant|
-      restaurant.id
-    end
-    restaurants_id.include?(restaurant_id)
-  end
-
   def favorite(restaurant)
     unless self.restaurants.include? restaurant
       self.restaurants.push restaurant
@@ -31,5 +21,5 @@ class User < ActiveRecord::Base
       self.restaurants.destroy(restaurant)
     end
   end
-  
+
 end

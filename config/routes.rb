@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   # Welcome
   get "/"                  => 'welcome#index', as: 'root'
   get '/search'            => 'restaurants#search'
-  post '/favorite'         => 'users#add_favorite'
-  post '/unfavorite'       => 'users#remove_favorite'
+  post '/favorite'         => 'restaurants#add_favorite'
+  post '/unfavorite'       => 'restaurants#remove_favorite'
 
   resources :users, except: [:index]
   resources :restaurants, only: [:index, :show]
