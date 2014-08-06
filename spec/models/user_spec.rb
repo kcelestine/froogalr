@@ -1,8 +1,10 @@
 require 'rails_helper'
 
 describe User do
+  it "has a valid factory" do
+    FactoryGirl.build(:user).should be_valid
+  end
   let(:alex) { User.create! username: 'aaackerman', first_name: 'Alex', last_name: 'Ackerman', email: 'aaackerman@yahoo.com'}
-
 
   it { is_expected.to validate_presence_of(:username) }
   it { is_expected.to validate_uniqueness_of(:username) }
@@ -15,6 +17,5 @@ describe User do
 
   it { is_expected.to have_many(:reviews) }
   it { is_expected.to have_and_belong_to_many(:restaurants) }
-
 
 end
