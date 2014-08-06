@@ -35,13 +35,10 @@ group :development, :test  do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'rspec-rails', '~> 3.0.0'
-  gem 'capybara', '~> 2.4.0'
-  gem 'selenium-webdriver', '~> 2.42.0'
   gem 'awesome_print'
   gem 'shoulda-matchers', require: false
   gem 'rspec-collection_matchers'
   gem 'factual-api'
-  gem 'factory_girl_rails'
 end
 
 gem 'devise'
