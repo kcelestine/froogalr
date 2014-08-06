@@ -29,7 +29,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     authorize! :destroy, @review
-    @review.detroy
+    @review.destroy
   end
 
   private

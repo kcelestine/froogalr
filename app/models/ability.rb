@@ -4,7 +4,8 @@ class Ability
   def initialize(user)
     
     can :create, Review do |review|
-        user.reviews.include?(review.id) == false 
+      if user.reviews.include?(review.id) == false 
+      end
     end
 
     can :update, Review do |review|
