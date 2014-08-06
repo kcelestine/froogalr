@@ -49,6 +49,12 @@ google.maps.event.addDomListener(window, 'load', initialize);
   <p>
     Time: <%= @restaurant.hours %>
   </p>
+  <p>
+    <a href="<%= @restaurant.yelp %>" target="_blank">Yelp</a>
+  </p>
+  <p>
+    <a href="<%= @restaurant.seamless %>" target="_blank">Seamless</a>
+  </p>
   <div id="map-canvas" class="restaurant-show-map"></div>
 
   <div id="user-review">
