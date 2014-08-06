@@ -39,16 +39,6 @@ class UsersController < ApplicationController
     redirect_to(root_path)
   end
 
-  def add_favorite
-    @restaurant = Restaurant.find(params[:id])
-    current_user.favorite(@restaurant)
-  end
-
-  def remove_favorite
-    @restaurant = Restaurant.find(params[:id])
-    current_user.unfavorite(@restaurant)
-  end
-
   private
 
   def user_params
