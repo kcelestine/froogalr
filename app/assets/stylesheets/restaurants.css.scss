@@ -2,16 +2,67 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-html { 
+html {
   height: 100%;
 }
 
-body { 
-  height: 100%; 
-  margin: 0; 
+body {
+  height: 100%;
+  margin: 0;
   padding: 0;
 }
 
-#map-canvas { 
-  height: 100%; 
+#map-canvas {
+  position:relative;
 }
+
+.index-map {height: 100%;}
+
+#map-search {position: absolute;z-index:10;top:150px;left:100px;background:#FFF;width: 300px;height:98px;padding: 15px;box-shadow: 0 1px 10px 0 rgba(0,0,0,.25);border-radius: 5px;}
+#map-search p {margin: 0;}
+#map-search input[type="text"] {width: 95%;padding: 2%;margin-bottom: 15px;height: 25px;font-size: 16px;border:1px solid #C7C7C7;border-radius: 3px;outline: none;transition: all 0.5s ease;}
+#map-search input[type="submit"] {width: 100%; background: #D53E2A; padding: 4% 2%; border-radius: 3px; color: #FFF; font-size: 16px;outline: none;transition: all 0.5s ease;border:0;}
+#map-search input[type="submit"]:hover {cursor: pointer;color:#333;}
+
+div#map-modal {
+  position: absolute;
+  z-index: 10;
+  background: rgba(0,0,0,.6);
+  height: 100%;
+  width: 100%;
+  display:none;
+  top: 0;
+  left: 0;
+
+}
+
+#map-modal #modal-content {
+  background: rgba(255,255,255,1);
+  color: whitesmoke;
+  width: 500px;
+  height: 500px;
+  left: 34%;
+  top: 20%;
+  position:absolute;
+  box-shadow: 0 1px 10px 0 rgba(0,0,0,.25);
+}
+
+#modal-content p {color: #333;}
+#restaurant-information {color:#333;padding: 30px;}
+#restaurant-information a {color: #333;}
+#restaurant-information h3 {margin-top:0;}
+
+span#close {
+  float: right;
+  color: white;
+  font-size: 30px;
+}
+
+.restaurant-show-map {width: 750px;margin: 0 auto;height: 350px;}
+
+
+#restaurants-show-content {width: 1000px;margin: 30px auto;background: #FFF;padding: 30px;box-shadow: 0 0 0 1px rgba(0,0,0,.04),0 1px 5px rgba(0,0,0,.1);}
+#restaurants-show-content h2 {margin: 0;}
+
+#user-review {margin-top: 40px;}
+#user-review textarea {width: 300px;height: 100px;}

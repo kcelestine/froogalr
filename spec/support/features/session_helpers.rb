@@ -18,7 +18,7 @@ module Features
     end
 
     def log_out
-      click_on 'Log Out'
+      click_on 'Sign out'
     end
 
   end

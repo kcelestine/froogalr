@@ -14,7 +14,6 @@ feature 'User logs in' do
     log_out
   end
 
-
   scenario 'with valid information' do
   end
 
@@ -48,9 +47,13 @@ feature 'User logs in' do
   end
 
   scenario 'and can review restaurants' do
+    # create restaurant
+    visit restaurant_path(1)
+    expect(page).to have_content('Like this restaurant')
+    click_on 'Review'
+    expect(page).to have_content('Review')
+    # check_in_db_review(user, restaurant)
+    click_on('Edit Review')
+    # check_in_db_edit_review(user, restaurant)
   end
-
-  scenario 'and can edit a previously left review' do
-  end
-
 end
