@@ -63,12 +63,12 @@ zip_codes.each do |zip|
   restaurant_info_hash = factual.table("restaurants").filters({:country => "US", :price => 1, :postcode => zip}).limit(10)
     restaurant_info_hash.each do |restaurant|
     #gets seamless and yelp urls for each restaurant by factual id
-    seamless_hash = crosswalk.table("crosswalk").filters(:factual_id => restaurant["factual_id"],:namespace => { "$in" => [:seamless] })
-    yelp_hash = crosswalk.table("crosswalk").filters(:factual_id => restaurant["factual_id"],:namespace => { "$in" => [:yelp] }) 
+    # seamless_hash = crosswalk.table("crosswalk").filters(:factual_id => restaurant["factual_id"],:namespace => { "$in" => [:seamless] })
+    # yelp_hash = crosswalk.table("crosswalk").filters(:factual_id => restaurant["factual_id"],:namespace => { "$in" => [:yelp] }) 
       
       #iterates through seamless and yelp urls to put in new restaurant 
-      seamless_hash.each do |seamless|
-        yelp_hash.each do |yelp|
+      # seamless_hash.each do |seamless|
+      #   yelp_hash.each do |yelp|
           
           Restaurant.create(
             name: restaurant["name"],
@@ -80,11 +80,9 @@ zip_codes.each do |zip|
             website: restaurant["website"],
             cuisine: restaurant["cuisine"][0],
             hours: restaurant["hours_display"],
-            factual_id: restaurant["factual_id"],
-            seamless: seamless["url"],
-            yelp: yelp["url"])
-        end
-      end
+            factual_id: restaurant["factual_id"])
+      #   end
+      # end
     end
   sleep(1)
 end
