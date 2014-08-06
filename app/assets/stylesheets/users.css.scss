@@ -3,5 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {background: #f3f3f3;}
-#user-show-content {width: 1000px;margin: 30px auto;background: #FFF;padding: 30px;box-shadow: 0 0 0 1px rgba(0,0,0,.04),0 1px 5px rgba(0,0,0,.1);}
+#user-show-content {width: 1000px;margin: 30px auto;background: #F9F9F9;padding: 30px;box-shadow: 0 0 0 1px rgba(0,0,0,.04),0 1px 5px rgba(0,0,0,.1);}
 #user-show-content h2 {margin: 0;}
+
+
+#user-favorites {background:#FFF;padding:0 10px 10px 10px;box-shadow:0 0 0 1px rgba(0, 0, 0, 0.04), 0 1px 5px rgba(0, 0, 0, 0.1);width: 30%;}
+#favorites-header {float: left;width: 100%;margin: 5px 0 10px 0;}
+.favorites-list {list-style:none;width: 100%;padding-left: 0;margin-bottom: 0;}
+.favorites-list li {padding: 10px 0;margin: 5px 0;border-bottom: 1px solid #E2E3E2;}
+.favorites-list li:last-child {border-bottom:0;padding-bottom: 0;}
+.favorites-list li a {border-bottom: none;padding-left: 20px;}

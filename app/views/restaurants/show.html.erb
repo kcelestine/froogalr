@@ -31,34 +31,36 @@ google.maps.event.addDomListener(window, 'load', initialize);
   <% else %>
     <%= button_to 'Favorite', '/favorite', remote: true, method: :post, params: {id: @restaurant.id}, id: 'favorite' %>
   <% end %>
-  <h2><%= @restaurant.name %></h2>
+  <h2>Name: <%= @restaurant.name %></h2>
   <p>
-    <%= @restaurant.address %> <%= @restaurant.zip_code %>
+    Address: <%= @restaurant.address %> <%= @restaurant.zip_code %>
   </p>
   <p>
     Latitude: <%= @restaurant.latitude %> Longitude: <%= @restaurant.longitude %>
   </p>
   <p>
-    <%= @restaurant.telephone %>
+    Phone Number: <%= @restaurant.telephone %>
   </p>
   <p>
     <a href="<%= @restaurant.website %>" target="_blank"><%= @restaurant.website %></a>
   </p>
   <p>
-    <%= @restaurant.cuisine %>
+    Cuisine: <%= @restaurant.cuisine %>
   </p>
   <p>
-    <%= @restaurant.hours %>
+    Time: <%= @restaurant.hours %>
   </p>
   <div id="map-canvas" class="restaurant-show-map"></div>
 
-  <% if user_signed_in? %>
-    <%= render 'reviews/form' %>
-  <% end %>
+  <div id="user-review">
+    <% if user_signed_in? %>
+      <%= render 'reviews/form' %>
+    <% end %>
 
-  <% @restaurant.reviews.each do |review| %>
-    <%= link_to(review.user.username, user_path(review.user.id)) %>
-    <%= review.worth_it %>
-    <%= review.comment %>
-  <% end %>
+    <% @restaurant.reviews.each do |review| %>
+      <%= link_to(review.user.username, user_path(review.user.id)) %>
+      <%= review.worth_it %>
+      <%= review.comment %>
+    <% end %>
+  </div>
 </div>

@@ -7,7 +7,7 @@
   5 <%= radio_button_tag :worth_it, '5', :checked => 5 %>
   <br>
   Review:
-  <%= text_field_tag :comment %>
+  <%= text_area_tag :comment %>
   <br>
   <%= hidden_field_tag(:restaurant_id, @restaurant.id) %>
   <br>
