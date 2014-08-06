@@ -1,30 +1,9 @@
 require 'factual'
 
-User.destroy_all
 Restaurant.destroy_all
 factual_api_key = ENV["FACTUAL_API_KEY"]
 factual_api_secret = ENV["FACTUAL_API_SECRET"]
 factual = Factual.new("#{factual_api_key}", "#{factual_api_secret}")
-# binding.pry
-
-testuser = User.create(
-  first_name: "John",
-  last_name: "Smith",
-  username: "Test",
-  email_address: "test@test.com"
-)
-
-# testrestaurant = Restaurant.create(
-#   name: "Test",
-#   address: "123 Apple St.",
-#   latitude: "40.736863",
-#   longitude: "-73.982189",
-#   zip_code: "10010",
-#   telephone: "212 - 228 - 8273",
-#   website: "http://www.pandesalny.com",
-#   cuisine: "Diner",
-#   hours: "Open Daily 7:30 AM-8:00 PM"
-# )
 
 zip_codes = [
   10026,
@@ -73,21 +52,26 @@ zip_codes = [
 zip_codes.each do |zip|
 
   restaurant_info_hash = factual.table("restaurants").filters({:country => "US", :price => 1, :postcode => zip}).limit(10)
-
   # restaurant_info_hash = Factual.restaurant_info(zip)
-  restaurant_info_hash.each do |restaurant|
-    Restaurant.create(
-      name: restaurant["name"],
-      address: restaurant["address"],
-      latitude: restaurant["latitude"],
-      longitude: restaurant["longitude"],
-      zip_code: restaurant["postcode"],
-      telephone: restaurant["tel"],
-      website: restaurant["website"],
-      cuisine: restaurant["cuisine"][0],
-      hours: restaurant["hours_display"],
-      factual_id: restaurant["factual_id"]
-    )
-  end
+    restaurant_info_hash.each do |restaurant|
+      
+      crosswalk_hash = factual.table("crosswalk").filters(:factual_id => restaurant["factual_id"],:namespace => { "$in" => [:seamless, :yelp] }).rows
+          crosswalk_hash.each do |croswalk|
+            Restaurant.create(
+              name: restaurant["name"],
+              address: restaurant["address"],
+              latitude: restaurant["latitude"],
+              longitude: restaurant["longitude"],
+              zip_code: restaurant["postcode"],
+              telephone: restaurant["tel"],
+              website: restaurant["website"],
+              cuisine: restaurant["cuisine"][0],
+              hours: restaurant["hours_display"],
+              factual_id: restaurant["factual_id"],
+              seamless: crosswalk[1]["url"],
+              yelp: crosswalk[2]["url"])
+        end
+    end
   sleep(1)
 end
+
