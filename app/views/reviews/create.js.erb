@@ -1,6 +1,6 @@
 console.log('Review created!');
-var comment = '<%= (@review.comment) %>';
-var worthIt = '<%= (@review.worth_it)';
+var comment = '<%= j(@review.comment) %>';
+var worthIt = '<%= j(@review.worth_it) %>';
 console.log(comment);
 console.log(worthIt);
 var reviewHtml = '<%= j(render @review) %>';
