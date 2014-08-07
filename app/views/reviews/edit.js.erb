@@ -1,0 +1,11 @@
+// var restuarantId = $('.hidden-div').attr('data-id');
+// console.log('hi');
+//
+console.log('hi');
+var formHtml = '<%= j(render 'form') %>';
+var id = '<%= @review.id %>';
+console.log(id);
+
+$('#review_' + id).find('div').remove();
+
+$(formHtml).appendTo('#review_' + id);

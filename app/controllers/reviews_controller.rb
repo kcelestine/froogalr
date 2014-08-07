@@ -1,9 +1,9 @@
 class ReviewsController < ApplicationController
 
-  # def new
-  #   @review = Review.new
-  #   authorize! :create, @review
-  # end
+  def new
+    @review = Review.new
+    authorize! :create, @review
+  end
 
   def create
     @review = Review.new
@@ -13,19 +13,19 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id
     @review.restaurant_id = params[:restaurant_id]
     @review.save
-    render json: @review
+    # render json: @review
   end
 
-  # def edit
-  #   @review = Review.find(params[:id])
-  #   authorize! :update, @review
-  # end
+  def edit
+    @review = Review.find(params[:id])
+    @restaurant = @review.restaurant
+    authorize! :update, @review
+  end
 
   def update
     @review = Review.find(params[:id])
     authorize! :update, @review
     @review.update(review_params)
-    render json: @review
   end
 
   def destroy
@@ -37,6 +37,6 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.permit(:user_id, :restaurant_id, :woth_it, :comment)
+    params.require(:review).permit(:user_id, :restaurant_id, :worth_it, :comment)
   end
 end
