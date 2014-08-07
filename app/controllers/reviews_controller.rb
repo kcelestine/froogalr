@@ -1,9 +1,9 @@
 class ReviewsController < ApplicationController
 
-  # def new
-  #   @review = Review.new
-  #   authorize! :create, @review
-  # end
+  def new
+    @review = Review.new
+    authorize! :create, @review
+  end
 
   def create
     @review = Review.new
@@ -16,10 +16,10 @@ class ReviewsController < ApplicationController
     render json: @review
   end
 
-  # def edit
-  #   @review = Review.find(params[:id])
-  #   authorize! :update, @review
-  # end
+  def edit
+    @review = Review.find(params[:id])
+    authorize! :update, @review
+  end
 
   def update
     @review = Review.find(params[:id])
@@ -32,7 +32,6 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     authorize! :destroy, @review
     @review.destroy
-    render :nothing => true
   end
 
   private
