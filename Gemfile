@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+ 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -38,6 +38,9 @@ group :development, :test  do
   gem 'awesome_print'
   gem 'shoulda-matchers', require: false
   gem 'rspec-collection_matchers'
+  gem 'factual-api'
+  gem 'capybara'
+  gem 'factory_girl_rails'
 end
 
 gem 'devise'
