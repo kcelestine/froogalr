@@ -13,6 +13,49 @@ factual = Factual.new("#{factual_api_key}", "#{factual_api_secret}")
 # crosswalk_api_secret = ENV["CROSSWALK_API_SECRET"]
 # crosswalk = Factual.new("#{crosswalk_api_key}", "#{crosswalk_api_secret}")
 
+#queens zips
+# zip_codes = [
+# 11692,
+# 11102,
+# 11359,
+# 11426,
+# 11697,
+# 11411,
+# 11356,
+# 11368,
+# 11369,
+# 11373,
+# 11690,
+# 11002,
+# 11351,
+# 11375,
+# 11365,
+# 11004,
+# 11423,
+# 11313,
+# 11372,
+# 11405,
+# 11415,
+# 11362,
+# 11101,
+# 11378,
+# 11379,
+# 11364,
+# 11416,
+# 11427,
+# 11374,
+# 11418,
+# 11385,
+# 11694,
+# 11422,
+# 11412,
+# 11420,
+# 11419,
+# 11413,
+# 11104,
+# 11357,
+# 11421,
+# 11377]
 
 # Brooklyn Zips
 # zip_codes = [
@@ -104,6 +147,7 @@ factual = Factual.new("#{factual_api_key}", "#{factual_api_secret}")
 #   10314
 # ]
 
+#manhattan zips
 # zip_codes = [
 #   10026,
 #   10027,
@@ -147,11 +191,11 @@ factual = Factual.new("#{factual_api_key}", "#{factual_api_secret}")
 #   10034,
 #   10040]
 
-# zip_codes.each do |zip|
+zip_codes.each do |zip|
 
   # gets restaurants for each zipcode
-#   restaurant_info_hash = factual.table("restaurants").filters({:country => "US", :price => 1, :postcode => zip}).limit(50)
-#     restaurant_info_hash.each do |restaurant|
+  restaurant_info_hash = factual.table("restaurants").filters({:country => "US", :price => 1, :postcode => zip}).limit(50)
+    restaurant_info_hash.each do |restaurant|
 
 #     # gets seamless and yelp urls for each restaurant by factual id
 #     # seamless_hash = crosswalk.table("crosswalk").filters(:factual_id => restaurant["factual_id"],:namespace => { "$in" => [:seamless] })
@@ -161,34 +205,24 @@ factual = Factual.new("#{factual_api_key}", "#{factual_api_secret}")
 #       # seamless_hash.each do |seamless|
 #       #   yelp_hash.each do |yelp|
 
-#           Restaurant.create(
-#             name: restaurant["name"],
-#             address: restaurant["address"],
-#             latitude: restaurant["latitude"],
-#             longitude: restaurant["longitude"],
-#             zip_code: restaurant["postcode"],
-#             telephone: restaurant["tel"],
-#             website: restaurant["website"],
-#             cuisine: restaurant["cuisine"][0],
-#             hours: restaurant["hours_display"],
-#             factual_id: restaurant["factual_id"])
-#       #   end
-#       # end
-#     end
-#   sleep(1)
-# end
-
-restaurants_hash = Restaurant.all
-restaurants_hash.each do |restaurant|
-
-  seamless_hash = factual.table("crosswalk").filters(:factual_id => restaurant["factual_id"],:namespace => { "$in" => [:seamless] })
-  seamless_hash.each do |seamless|
-    restaurant.update(seamless: seamless['url'])
-  end
+          Restaurant.create(
+            name: restaurant["name"],
+            address: restaurant["address"],
+            latitude: restaurant["latitude"],
+            longitude: restaurant["longitude"],
+            zip_code: restaurant["postcode"],
+            telephone: restaurant["tel"],
+            website: restaurant["website"],
+            cuisine: restaurant["cuisine"][0],
+            hours: restaurant["hours_display"],
+            factual_id: restaurant["factual_id"])
+      #   end
+      # end
+    end
   sleep(1)
 end
 
-# restaurants = Restaurant.all
+# restaurants_hash = Restaurant.all
 # restaurants.each do |restaurant|
 
 #   seamless_hash = crosswalk.table("crosswalk").filters(:factual_id => restaurant["factual_id"],:namespace => { "$in" => [:yelp] })
