@@ -29,18 +29,7 @@ h1,h2,h3,h4,h5,h6 {font-family: "ff-tisa-web-pro",serif;}
 #home-content {width: 1000px;margin: 0 auto;}
 #home-content h1 {color: #FFF;text-shadow:1px 1px 1px #000;text-align: center;font-size: 50px;margin-top: 150px;}
 
-.home-button {width: 400px;
-background: #D53E2A;
-padding: 20px 40px;
-border-radius: 3px;
-color: #FFF;
-font-size: 30px;
-font-family: "futura-pt",sans-serif;
-outline: none;
-transition: all 0.5s ease;
-border: 0;
-margin: 0 0 0 325px;
-cursor: pointer;}
+.home-button {width: 400px; background: #D53E2A; padding: 20px 40px; border-radius: 3px; color: #FFF; font-size: 30px; font-family: "futura-pt",sans-serif; outline: none; transition: all 0.5s ease; border: 0; margin: 0 0 0 325px; cursor: pointer;}
 
 .home-button:hover {background: #AF2F25;}
 
@@ -48,5 +37,5 @@ cursor: pointer;}
 #sign-up-form, #sign-in-form, #edit-form {width: 500px;margin: 30px auto;text-align: center;}
 #sign-up-form input[type="text"], #sign-up-form input[type="email"], #sign-up-form input[type="password"], #sign-in-form input[type="text"], #sign-in-form input[type="email"], #sign-in-form input[type="password"], #edit-form input[type="text"], #edit-form input[type="email"], #edit-form input[type="password"]  {width: 92%; padding: 12px 20px; margin-bottom: 10px; border: 1px solid #E4E4E4; border-radius: 3px; outline: none; font-size: 12px;}
 #sign-up-form label {margin-bottom: 10px;}
-#edit-form input[type="submit"], #sign-up-form input[type="submit"], #sign-in-form input[type="submit"] {width: 100%; background: #D53E2A; padding: 4% 2%; border-radius: 3px; color: #FFF; font-size: 16px; outline: none; transition: all 0.5s ease; border: 0;cursor: pointer;}
+#edit-form input[type="submit"], #sign-up-form input[type="submit"], #sign-in-form input[type="submit"],  {width: 100%; background: #D53E2A; padding: 4% 2%; border-radius: 3px; color: #FFF; font-size: 16px; outline: none; transition: all 0.5s ease; border: 0;cursor: pointer;}
 #edit-form input[type="submit"]:hover, #sign-up-form input[type="submit"]:hover, #sign-in-form input[type="submit"]:hover {background: #AF2F25;}

@@ -68,6 +68,10 @@ span#close {
 
 #reviews_container textarea {width: 300px;height: 100px;}
 #reviews_container {margin-top: 20px;margin-bottom: 20px;}
+#reviews_container textarea {width: 40%; padding: 12px 20px; margin-bottom: 10px; border: 1px solid #E4E4E4; border-radius: 3px; outline: none; font-size: 12px;}
+#new_review input[type="submit"] {width: 15%; background: #D53E2A; padding: 16px 27px; border-radius: 3px; color: #FFF; font-size: 16px; outline: none; transition: all 0.5s ease; border: 0;cursor: pointer;}
+#new_review input[type="submit"]:hover {background: #AF2F25;}
+#worth-it-rating {margin-bottom: 15px;}
 
 /* Ratings */
 .rating {line-height: 32px;position:relative;}
