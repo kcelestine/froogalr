@@ -61,8 +61,50 @@ span#close {
 .restaurant-show-map {width: 750px;margin: 0 auto;height: 350px;}
 
 
-#restaurants-show-content {width: 1000px;margin: 30px auto;background: #FFF;padding: 30px;box-shadow: 0 0 0 1px rgba(0,0,0,.04),0 1px 5px rgba(0,0,0,.1);}
-#restaurants-show-content h2 {margin: 0;}
+#restaurants-show-content {width: 1000px;margin: 30px auto;padding: 30px;background: #FCFCFC;border: 1px solid #E5E5E5; border-radius: 3px;text-align: center;}
+#restaurants-show-content h2 {margin: 0;text-indent: 107px;}
 
-#user-review {margin-top: 40px;}
-#user-review textarea {width: 300px;height: 100px;}
+#favorite { float: right; background: #FFF; border: 2px solid #D53E2A; padding: 8px 15px; font-size: 14px; font-family: 'futura'; font-weight: 100; cursor: pointer;outline:none; }
+
+#reviews_container textarea {width: 300px;height: 100px;}
+#reviews_container {margin-top: 20px;}
+
+/* Ratings */
+.rating {line-height: 32px;position:relative;}
+.rating span {
+  height: 32px;
+  display: block;
+  text-indent: -9999px;
+  float:left;
+  position:absolute;
+}
+
+.worth-5 .rating-number {
+  background: url("5.png");
+  width: 160px;
+  left: 47%;
+}
+
+.worth-4 .rating-number {
+  background: url("4.png");
+  width: 128px;
+  left: 47%;
+}
+
+.worth-3 .rating-number {
+  background: url("3.png");
+  width: 75px;
+  left: 47%;
+}
+
+.worth-2 .rating-number {
+  background: url("2.png");
+  width: 43px;
+  left: 47%;
+}
+
+.worth-1 .rating-number {
+  background: url("1.png");
+  width: 32px;
+  left: 47%;
+}

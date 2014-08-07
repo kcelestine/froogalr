@@ -16,17 +16,18 @@ function mapIt(){
       zip: restaurants[i].zip_code,
       telephone: restaurants[i].telephone,
       website: restaurants[i].website,
-      cuisine: restaurants[i].cuisine
+      cuisine: restaurants[i].cuisine,
     });
     google.maps.event.addListener(marker, 'click', function() {
+      var reviews = <%= @reviews %>
+      console.log(this);
       var modal = $('#map-modal');
       var modalContent = $('#modal-content');
-      modalContent.empty();
-      console.log(this.latitude);
+      modalContent.empty();;
       var restaurantInfo = $('<div id="restaurant-information">' + '<h3>'+ this.title +'</h3>'
                            + '<p>'+ this.address + ' ' + this.zip +'</p>'
                            + '<p>'+ this.telephone +'</p>'
-                           + (this.website === null ? '' : ('<a href="'+ this.website +'" target="_blank">'+ this.website +'</a>'))
+                           + (this.website === null ? '' : ('<p><a href="'+ this.website +'" target="_blank">'+ this.website +'</a></p>'))
                            + '<a href="/restaurants/' + this.id + '">More Info</a>'+ '</div>');
       modalContent.append(restaurantInfo);
       modal.show();
@@ -36,7 +37,6 @@ function mapIt(){
 }
 
 function hideModal() {
-  console.log('hi');
   $('#map-modal').find('div').empty();
   $("#map-modal").hide();
 }

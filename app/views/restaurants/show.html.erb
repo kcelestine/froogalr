@@ -41,8 +41,8 @@
   <p>Time: <%= @restaurant.hours %></p>
 
   <% if @restaurant.reviews.count > 1 %>
-    <p class="<%= @restaurant.reviews.average(:worth_it).round %>">
-      <span class="rating"><%= rating = @restaurant.reviews.average(:worth_it).round %></span>
+    <p class="worth-<%= @restaurant.reviews.average(:worth_it).round %> rating">
+      <span class="rating-number"><%= rating = @restaurant.reviews.average(:worth_it).round %></span><br>
       <%= @restaurant.worth_it_rating(rating) %>
     </p>
   <% end %>
