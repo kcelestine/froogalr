@@ -26,9 +26,10 @@ feature 'User logs in' do
   end
 
   scenario 'and can view other users profiles' do
-    visit user_path(2)
-    expect(page).to have_content('khadijahcc')
-    expect(page).to have_content('Khadijah')
+    user = FactoryGirl.build(:confirmed_user)
+    visit user_path(user)
+    expect(page).to have_content(user.username)
+    expect(page).to have_content(user.first_name)
     expect(page).to have_content('Reviews')
     expect(page).to have_content('Favorites')
   end
@@ -40,7 +41,7 @@ feature 'User logs in' do
 
   scenario 'and can like and unlike restaurants' do
     # create restaurant
-    visit restaurant_path(1)
+    visit restaurant_path(Restaurant.first)
     click_on 'Favorite'
     # check_in_db_like(user, restaurant)
     click_on('Unfavorite')
@@ -49,7 +50,7 @@ feature 'User logs in' do
 
   scenario 'and can review restaurants' do
     # create restaurant
-    visit restaurant_path(1)
+    visit restaurant_path(Restaurant.first)
     click_on 'Review'
     expect(page).to have_content('Review')
     # check_in_db_review(user, restaurant)

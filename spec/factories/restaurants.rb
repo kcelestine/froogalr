@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :restaurant do
+    id 1
     name 'Yummy Fried Chicken'
     address '61 Martense St'
     latitude 40.804661
