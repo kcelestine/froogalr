@@ -22,7 +22,7 @@ body {
 #map-search p {margin: 0;}
 #map-search input[type="text"] {width: 95%;padding: 2%;margin-bottom: 15px;height: 25px;font-size: 16px;border:1px solid #C7C7C7;border-radius: 3px;outline: none;transition: all 0.5s ease;}
 #map-search input[type="submit"] {width: 100%; background: #D53E2A; padding: 4% 2%; border-radius: 3px; color: #FFF; font-size: 16px;outline: none;transition: all 0.5s ease;border:0;}
-#map-search input[type="submit"]:hover {cursor: pointer;color:#333;}
+#map-search input[type="submit"]:hover {cursor: pointer;background: #AF2F25;}
 
 div#map-modal {
   position: absolute;
@@ -108,6 +108,3 @@ span#close {
   width: 32px;
   left: 47%;
 }
-
-
-

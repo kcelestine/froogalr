@@ -3,9 +3,6 @@
 </script>
 <div id="home-content">
   <h1>This is some bullshit placeholder text that will be seen on the home page</h1>
-</div>
+  <%= link_to('Look For Restaurants', restaurants_path, class: 'home-button') %>
 
-<%= form_tag('restaurants/search', method: :get, id: 'map-search') do %>
-  <p><%= text_field_tag :search %><p>
-  <p><%= submit_tag 'Search By Zip Code' %></p>
-<% end %>
+</div>
