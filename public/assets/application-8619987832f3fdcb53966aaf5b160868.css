@@ -1,0 +1,442 @@
+/* line 5, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+html {
+  height: 100%;
+}
+
+/* line 9, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 15, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+#map-canvas {
+  position: relative;
+}
+
+/* line 19, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+.index-map {
+  height: 100%;
+}
+
+/* line 21, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+#map-search {
+  position: absolute;
+  z-index: 10;
+  top: 150px;
+  left: 100px;
+  background: #FFF;
+  width: 300px;
+  height: 98px;
+  padding: 15px;
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+
+/* line 22, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+#map-search p {
+  margin: 0;
+}
+
+/* line 23, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+#map-search input[type="text"] {
+  width: 95%;
+  padding: 2%;
+  margin-bottom: 15px;
+  height: 25px;
+  font-size: 16px;
+  border: 1px solid #C7C7C7;
+  border-radius: 3px;
+  outline: none;
+  transition: all 0.5s ease;
+}
+
+/* line 24, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+#map-search input[type="submit"] {
+  width: 100%;
+  background: #D53E2A;
+  padding: 4% 2%;
+  border-radius: 3px;
+  color: #FFF;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.5s ease;
+  border: 0;
+}
+
+/* line 25, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+#map-search input[type="submit"]:hover {
+  cursor: pointer;
+  background: #AF2F25;
+}
+
+/* line 27, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+div#map-modal {
+  position: absolute;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%;
+  display: none;
+  top: 0;
+  left: 0;
+}
+
+/* line 39, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+#map-modal #modal-content {
+  background: white;
+  color: whitesmoke;
+  width: 500px;
+  height: 500px;
+  left: 34%;
+  top: 20%;
+  position: absolute;
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* line 50, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+#modal-content p {
+  color: #333;
+}
+
+/* line 51, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+#restaurant-information {
+  color: #333;
+  padding: 30px;
+}
+
+/* line 52, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+#restaurant-information a {
+  color: #333;
+}
+
+/* line 53, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+#restaurant-information h3 {
+  margin-top: 0;
+}
+
+/* line 55, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+span#close {
+  float: right;
+  color: white;
+  font-size: 30px;
+}
+
+/* line 61, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+.restaurant-show-map {
+  width: 750px;
+  margin: 0 auto;
+  height: 350px;
+}
+
+/* line 64, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+#restaurants-show-content {
+  width: 1000px;
+  margin: 30px auto;
+  background: #FCFCFC;
+  border: 1px solid #E5E5E5;
+  border-radius: 3px;
+  text-align: center;
+  padding-top: 20px;
+  position: relative;
+}
+
+/* line 65, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+#restaurants-show-content h2 {
+  margin: 0;
+}
+
+/* line 67, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+#favorite {
+  float: right;
+  background: #FFF;
+  border: 2px solid #D53E2A;
+  padding: 8px 15px;
+  font-size: 14px;
+  font-family: 'futura';
+  font-weight: 100;
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  right: 20px;
+}
+
+/* line 69, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+#reviews_container textarea {
+  width: 300px;
+  height: 100px;
+}
+
+/* line 70, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+#reviews_container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* line 71, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+#reviews_container textarea {
+  width: 40%;
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  border: 1px solid #E4E4E4;
+  border-radius: 3px;
+  outline: none;
+  font-size: 12px;
+}
+
+/* line 72, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+#new_review input[type="submit"] {
+  width: 15%;
+  background: #D53E2A;
+  padding: 16px 27px;
+  border-radius: 3px;
+  color: #FFF;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.5s ease;
+  border: 0;
+  cursor: pointer;
+}
+
+/* line 73, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+#new_review input[type="submit"]:hover {
+  background: #AF2F25;
+}
+
+/* line 74, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+#worth-it-rating {
+  margin-bottom: 15px;
+}
+
+/* Ratings */
+/* line 77, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+.rating {
+  line-height: 32px;
+  position: relative;
+}
+
+/* line 78, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+.rating span {
+  height: 32px;
+  display: block;
+  text-indent: -9999px;
+  float: left;
+  position: absolute;
+  background-repeat: no-repeat;
+}
+
+/* line 87, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+.worth-5 .rating-number {
+  background: url("5-star.png");
+  width: 181px;
+  left: 41%;
+}
+
+/* line 93, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+.worth-4 .rating-number {
+  background: url("4-star.png");
+  width: 144px;
+  left: 43%;
+}
+
+/* line 99, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+.worth-3 .rating-number {
+  background: url("3-star.png");
+  width: 107px;
+  left: 45%;
+}
+
+/* line 105, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+.worth-2 .rating-number {
+  background: url("2-star.png");
+  width: 70px;
+  left: 47%;
+}
+
+/* line 111, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/restaurants.css.scss */
+.worth-1 .rating-number {
+  background: url("1-star.png");
+  width: 32px;
+  left: 49%;
+}
+/* line 6, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/users.css.scss */
+#user-show-content {
+  width: 1000px;
+  margin: 30px auto;
+  background: #FCFCFC;
+  border: 1px solid #E5E5E5;
+  border-radius: 3px;
+  min-height: 330px;
+}
+
+/* line 7, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/users.css.scss */
+#user-show-content h2 {
+  margin: 0;
+}
+
+/* line 10, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/users.css.scss */
+#user-favorites {
+  width: 45%;
+  float: left;
+  float: left;
+  margin-right: 5%;
+  padding-left: 20px;
+}
+
+/* line 12, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/users.css.scss */
+#favorites-header {
+  float: left;
+  width: 100%;
+  margin: 5px 0 10px 0;
+}
+
+/* line 13, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/users.css.scss */
+.favorites-list {
+  list-style: none;
+  width: 75%;
+  padding-left: 0;
+  margin-bottom: 0;
+  background: #FFF;
+  padding: 0 10px 10px 10px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 1px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  float: left;
+  border-radius: 2px;
+}
+
+/* line 14, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/users.css.scss */
+.favorites-list li {
+  padding: 10px 0;
+  margin: 5px 0;
+  border-bottom: 1px solid #E2E3E2;
+  float: left;
+  width: 100%;
+}
+
+/* line 15, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/users.css.scss */
+.favorites-list li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* line 16, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/users.css.scss */
+.favorites-list li a {
+  border-bottom: none;
+  padding-left: 20px;
+}
+
+/* line 17, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/users.css.scss */
+#user-reviews {
+  width: 45%;
+  display: inline-block;
+  border-left: 1px solid #e5e5e5;
+  padding-left: 20px;
+  min-height: 200px;
+}
+
+/* line 19, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/users.css.scss */
+#user-show-content #top-content {
+  padding-top: 20px;
+  padding-bottom: 0px;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+/* line 20, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/users.css.scss */
+#user-show-content #top-content h2, #user-show-content #top-content h3 {
+  margin-left: 20px;
+}
+
+/* line 21, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/users.css.scss */
+#edit-user {
+  float: right;
+  padding: 8px 15px;
+  border: 2px solid #D53E2A;
+  margin-right: 20px;
+}
+
+/* line 23, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/users.css.scss */
+#reviews-header {
+  margin: 5px 0 10px 0;
+}
+
+/* line 24, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/users.css.scss */
+.reviews {
+  list-style: none;
+  width: 75%;
+  padding-left: 0;
+  margin-bottom: 0;
+  background: #FFF;
+  padding: 0 10px 10px 10px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 1px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  float: left;
+  margin-bottom: 20px;
+  border-radius: 2px;
+}
+
+/* line 25, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/users.css.scss */
+.reviews .review-content {
+  width: 100%;
+  float: left;
+  padding: 10px 0;
+  margin: 5px 0;
+  border-bottom: 1px solid #E2E3E2;
+}
+
+/* line 26, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/users.css.scss */
+.reviews .review-content:last-child {
+  border-bottom: 0;
+}
+
+/* line 27, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/users.css.scss */
+.reviews .review-content a {
+  border-bottom: 0;
+}
+
+/* line 28, /Users/AAAckerman/Code/GA/froogalr_app/froogalr/app/assets/stylesheets/users.css.scss */
+.reviews .review-content p {
+  margin: 5px 0;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+body {font-family: "futura-pt",sans-serif;}
+a {color: #333;text-decoration: none;border-bottom: 1px dashed #2989B5;}
+h1,h2,h3,h4,h5,h6 {font-family: "ff-tisa-web-pro",serif;}
+
+#main-header {height: 100px;background: #FFF;position:fixed;top:0;z-index:999999999;width: 100%;border-top: 5px solid #D53E2A;border-bottom: 1px solid #E4E4E4;}
+#main-header h1 {margin: 0;float:left; font-size: 50px;}
+#main-header a {color: #333;border-bottom: none;transition: all 0.1s linear;}
+#main-header a:hover {border-bottom: 3px solid #D53E2A;}
+#header-block {width: 1000px;margin: 0 auto;}
+#header-content {float:right;margin-top: 37px;}
+
+#main-content {margin-top: 100px;width: 100%;height: 100%;float:left;}
+
+#home-content {width: 1000px;margin: 0 auto;}
+#home-content h1 {color: #FFF;text-shadow:1px 1px 1px #000;text-align: center;font-size: 50px;margin-top: 150px;}
+
+.home-button {width: 400px; background: #D53E2A; padding: 20px 40px; border-radius: 3px; color: #FFF; font-size: 30px; font-family: "futura-pt",sans-serif; outline: none; transition: all 0.5s ease; border: 0; margin: 0 0 0 325px; cursor: pointer;}
+
+.home-button:hover {background: #AF2F25;}
+
+
+#sign-up-form, #sign-in-form, #edit-form {width: 500px;margin: 30px auto;text-align: center;}
+#sign-up-form input[type="text"], #sign-up-form input[type="email"], #sign-up-form input[type="password"], #sign-in-form input[type="text"], #sign-in-form input[type="email"], #sign-in-form input[type="password"], #edit-form input[type="text"], #edit-form input[type="email"], #edit-form input[type="password"]  {width: 92%; padding: 12px 20px; margin-bottom: 10px; border: 1px solid #E4E4E4; border-radius: 3px; outline: none; font-size: 12px;}
+#sign-up-form label {margin-bottom: 10px;}
+#edit-form input[type="submit"], #sign-up-form input[type="submit"], #sign-in-form input[type="submit"],  {width: 100%; background: #D53E2A; padding: 4% 2%; border-radius: 3px; color: #FFF; font-size: 16px; outline: none; transition: all 0.5s ease; border: 0;cursor: pointer;}
+#edit-form input[type="submit"]:hover, #sign-up-form input[type="submit"]:hover, #sign-in-form input[type="submit"]:hover {background: #AF2F25;}
