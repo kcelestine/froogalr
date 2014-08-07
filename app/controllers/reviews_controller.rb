@@ -13,7 +13,6 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id
     @review.restaurant_id = params[:restaurant_id]
     @review.save
-    render json: @review
   end
 
   def edit
@@ -25,7 +24,6 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     authorize! :update, @review
     @review.update(review_params)
-    render json: @review
   end
 
   def destroy
