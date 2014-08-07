@@ -12,11 +12,13 @@ class ReviewsController < ApplicationController
     @review.comment = params[:comment]
     @review.user_id = current_user.id
     @review.restaurant_id = params[:restaurant_id]
+    @review.update(review_params)
     @review.save
   end
 
   def edit
     @review = Review.find(params[:id])
+    @restaurant = @review.restaurant
     authorize! :update, @review
   end
 
@@ -34,6 +36,6 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.permit(:user_id, :restaurant_id, :woth_it, :comment)
+    params.require(:review).permit(:user_id, :restaurant_id, :worth_it, :comment)
   end
 end

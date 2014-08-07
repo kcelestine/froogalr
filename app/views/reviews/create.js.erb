@@ -1,5 +1,4 @@
-console.log('Your review created!');
-
+console.log('Your review was created!');
 var reviewHtml = '<%= j(render @review) %>';
 var reviewsContainer = $('#reviews_container');
 var reviewDiv = $('<div class="review" id="<%= dom_id(@review) %>"></div>')
