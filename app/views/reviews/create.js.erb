@@ -1,6 +1,8 @@
-console.log('Review created!');
-var comment = '<%= j(@review.comment) %>';
-var worthIt = '<%= j(@review.worth_it) %>';
-console.log(comment);
-console.log(worthIt);
+console.log('Your review created!');
+
 var reviewHtml = '<%= j(render @review) %>';
+var reviewsContainer = $('#reviews_container');
+var reviewDiv = $('<div class="review" id="<%= dom_id(@review) %>"></div>')
+reviewDiv.val(reviewHtml);
+console.log(reviewDiv)
+reviewDiv.appendTo(reviewsContaner);
