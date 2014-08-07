@@ -90,14 +90,15 @@ crosswalk = Factual.new("#{crosswalk_api_key}", "#{crosswalk_api_secret}")
 #   sleep(1)
 # end
 
-restaurants = Restaurant.all 
-restaurants.each do |restaurant|
+# restaurants = Restaurant.all 
+# restaurants.each do |restaurant|
 
-  seamless_hash = crosswalk.table("crosswalk").filters(:factual_id => restaurant["factual_id"],:namespace => { "$in" => [:seamless] })
-  seamless_hash.each do |seamless|
-    restaurant.update(seamless: seamless['url'])
-  end
-end
+#   seamless_hash = factual.table("crosswalk").filters(:factual_id => restaurant["factual_id"],:namespace => { "$in" => [:seamless] })
+#   seamless_hash.each do |seamless|
+#     restaurant.update(seamless: seamless['url'])
+#     sleep(1)
+#   end
+# end
 
 # restaurants = Restaurant.all 
 # restaurants.each do |restaurant|

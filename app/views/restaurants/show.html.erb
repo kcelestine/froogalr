@@ -52,11 +52,12 @@
 
 
   <div id="reviews_container">
-    <% if user_signed_in? %>
-      <%= render 'reviews/form' %>
-    <% end %>
+      <% if user_signed_in? %>
+        <%= render 'reviews/form' %>
+      <% end %>
 
     <% @restaurant.reviews.each do |review| %>
+    <div id="<%= dom_id(review) %>">
       <h3 class="username"><%= link_to(review.user.username, user_path(review.user.id)) %></h3>
       <div class="worth-it">Worh it? <%= review.worth_it %></div>
       <div class="review-comment"><%= review.comment %></div>
@@ -67,5 +68,6 @@
         <%= link_to 'Delete', review, method: :delete, data: {confirm: 'Are you sure you want to delete this?'} %>
       <% end %>
     <% end %>
+    </div>
   </div>
 </div>
