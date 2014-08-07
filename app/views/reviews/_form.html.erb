@@ -1,14 +1,17 @@
 <%= form_for @review, remote: true do |f| %>
+  <div id="worth-it-rating">
+  Was it worth it?<br>
+  1 <%= f.radio_button :worth_it, '1', :checked => 1 %>
+  2 <%= f.radio_button :worth_it, '2', :checked => 2 %>
+  3 <%= f.radio_button :worth_it, '3', :checked => 3 %>
+  4 <%= f.radio_button :worth_it, '4', :checked => 4 %>
+  5 <%= f.radio_button :worth_it, '5', :checked => 5 %>
+  </div>
 
-  <%= f.radio_button :worth_it, '1', :checked => 1 %>
-  <%= f.radio_button :worth_it, '2', :checked => 2 %>
-  <%= f.radio_button :worth_it, '3', :checked => 3 %>
-  <%= f.radio_button :worth_it, '4', :checked => 4 %>
-  <%= f.radio_button :worth_it, '5', :checked => 5 %>
-
+  <div id="add-comment-box">
   <%= f.text_area :comment %>
+  </div>
 
   <%= f.hidden_field(:restaurant_id, value: @restaurant.id) %>
-
-  <%= f.submit('Add Review') %>
+  <%= f.submit('Post Review') %>
 <% end %>
