@@ -53,8 +53,7 @@
     <div class="hidden-div" data-id="<%= @restaurant.id %>"></div>
       <% if user_signed_in? %>
         <%= render 'reviews/form' %>
-      <% end %>
-
+      <% end %> 
     <% @restaurant.reviews.each do |review| %>
     <div id="<%= dom_id(review) %>">
       <h3 class="username"><%= link_to(review.user.username, user_path(review.user.id)) %></h3>

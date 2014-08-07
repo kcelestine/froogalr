@@ -1,6 +1,7 @@
 $(function() {
   $('body').on('click', '#map-modal', hideModal);
 });
+
 function mapIt(){
   var restaurants = <%= @restaurants %>;
 
@@ -18,6 +19,7 @@ function mapIt(){
       website: restaurants[i].website,
       cuisine: restaurants[i].cuisine,
     });
+
     google.maps.event.addListener(marker, 'click', function() {
       var reviews = <%= @reviews %>
       console.log(this);
@@ -32,7 +34,6 @@ function mapIt(){
       modalContent.append(restaurantInfo);
       modal.show();
     });
-
   };
 }
 
