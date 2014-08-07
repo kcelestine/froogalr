@@ -53,6 +53,7 @@
 
 
   <div id="reviews_container">
+    <div class="hidden-div" data-id="<%= @restaurant.id %>"></div>
       <% if user_signed_in? %>
         <%= render 'reviews/form' %>
       <% end %>
