@@ -1,0 +1,4 @@
+var id = $(this).parent('id')
+console.log(id);
+$(this).parent.remove();
+$.ajax('/reviews/'+ id, {type: 'DELETE'});
