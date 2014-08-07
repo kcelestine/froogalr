@@ -39,6 +39,7 @@ group :development, :test  do
   gem 'shoulda-matchers', require: false
   gem 'rspec-collection_matchers'
   gem 'factual-api'
+  gem 'cabybara'
 end
 
 gem 'devise'
