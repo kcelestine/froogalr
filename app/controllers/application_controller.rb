@@ -10,12 +10,4 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :first_name
     devise_parameter_sanitizer.for(:sign_up) << :last_name
   end
-
-  private
-  def authorize
-    unless current_user && current_user.id == params[:id].to_i
-      redirect_to(users_path)
-    end
-  end
-
 end

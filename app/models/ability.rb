@@ -3,10 +3,7 @@ class Ability
 
   def initialize(user)
     
-    can :create, Review do |review|
-      if user.reviews.include?(review.id) == false 
-      end
-    end
+    can :create, Review
 
     can :update, Review do |review|
         user == review.user

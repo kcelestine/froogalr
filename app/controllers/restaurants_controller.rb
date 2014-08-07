@@ -2,7 +2,6 @@ class RestaurantsController < ApplicationController
 
   def index
     @restaurants = Restaurant.all
-    @reviews = Review.all
   end
 
   def show
@@ -14,13 +13,6 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.where_zip(zip).to_json.html_safe
   end
 
-  # def add_favorite
-  #   @user = User.find(current_user)
-  #   # binding.pry
-  #   @restaurant = Restaurant.find(params[:restaurant_id])
-  #   @user.restaurants << @restaurant
-  # end
-
   def add_favorite
     @restaurant = Restaurant.find(params[:id])
     current_user.favorite(@restaurant)
@@ -30,5 +22,4 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
     current_user.unfavorite(@restaurant)
   end
-
 end
