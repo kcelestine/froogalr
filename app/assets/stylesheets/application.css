@@ -18,7 +18,7 @@ a {color: #333;text-decoration: none;border-bottom: 1px dashed #2989B5;}
 h1,h2,h3,h4,h5,h6 {font-family: "ff-tisa-web-pro",serif;}
 
 #main-header {height: 100px;background: #FFF;position:fixed;top:0;z-index:999999999;width: 100%;border-top: 5px solid #D53E2A;border-bottom: 1px solid #E4E4E4;}
-#main-header h1 {margin: 0;float:left;}
+#main-header h1 {margin: 0;float:left; font-size: 50px;}
 #main-header a {color: #333;border-bottom: none;transition: all 0.1s linear;}
 #main-header a:hover {border-bottom: 3px solid #D53E2A;}
 #header-block {width: 1000px;margin: 0 auto;}
