@@ -12,6 +12,6 @@ class Ability
     can :destroy, Review do |review|
         user == review.user
     end
-
   end
+  
 end
