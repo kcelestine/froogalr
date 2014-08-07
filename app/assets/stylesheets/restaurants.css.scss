@@ -77,34 +77,35 @@ span#close {
   text-indent: -9999px;
   float:left;
   position:absolute;
+  background-repeat: no-repeat;
 }
 
 .worth-5 .rating-number {
-  background: url("5.png");
-  width: 160px;
-  left: 47%;
+  background: url("5-star.png");
+  width: 181px;
+  left: 41%;
 }
 
 .worth-4 .rating-number {
-  background: url("4.png");
-  width: 128px;
-  left: 47%;
+  background: url("4-star.png");
+  width: 144px;
+  left: 43%;
 }
 
 .worth-3 .rating-number {
-  background: url("3.png");
-  width: 75px;
-  left: 47%;
+  background: url("3-star.png");
+  width: 107px;
+  left: 45%;
 }
 
 .worth-2 .rating-number {
-  background: url("2.png");
-  width: 43px;
+  background: url("2-star.png");
+  width: 70px;
   left: 47%;
 }
 
 .worth-1 .rating-number {
-  background: url("1.png");
+  background: url("1-star.png");
   width: 32px;
-  left: 47%;
+  left: 49%;
 }
