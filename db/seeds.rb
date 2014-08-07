@@ -54,8 +54,7 @@ zip_codes = [
   10032,
   10033,
   10034,
-  10040
-]
+  10040]
 
 zip_codes.each do |zip|
 
