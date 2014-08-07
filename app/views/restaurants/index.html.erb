@@ -1,5 +1,5 @@
 <%= form_tag('/search', remote: true, method: :get, id: 'map-search') do %>
-  <p><%= text_field_tag :search %><p>
+  <p><%= text_field_tag :search,nil, placeholder: 'Zip Code (10001)' %><p>
   <p><%= submit_tag 'Search By Zip Code' %></p>
 <% end %>
 
