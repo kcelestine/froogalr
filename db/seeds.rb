@@ -147,6 +147,8 @@ factual = Factual.new("#{factual_api_key}", "#{factual_api_secret}")
 #   10314
 # ]
 
+zip_codes = [10019]
+
 #manhattan zips
 # zip_codes = [
 #   10026,
