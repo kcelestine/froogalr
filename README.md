@@ -1,9 +1,12 @@
 froogalr
 ========
 
-Project 2 - General Assembly WDI
+Project 2 - General Assembly June 2014 WDI
 
-Hungry and need to find cheap eats in the city? Enter Froogalr, for the frugal in us all.
+Find cheap eats in New York City, for under $15.
+
+Froogalr maps restaurants by zipcode with a price range of under $15 using data from the Factual Restaurants API. Users of froogalr can add favorite restaurants and post reviews to determine whether the restaurant was indeed worth the cheap price-point it totes.
+
 -------
 
 [User Stories](https://trello.com/b/m9Bx5PuF/team-nyan-cat-froogalr "Trello Page")
