@@ -1,5 +1,6 @@
+console.log('hi');
 var formHtml = '<%= j(render 'reviews/form')%>';
-$(formHtml).appendTo($('#reviews-container'));
+$(formHtml).appendTo($('#review_' + '<%= @review.id %>'));
 
 var restuarantId = $('.hidden-div').attr('data-id');
 console.log(restuarantId);

@@ -4,3 +4,8 @@
 <div id="home-content">
   <h1>This is some bullshit placeholder text that will be seen on the home page</h1>
 </div>
+
+<%= form_tag('restaurants/search', method: :get, id: 'map-search') do %>
+  <p><%= text_field_tag :search %><p>
+  <p><%= submit_tag 'Search By Zip Code' %></p>
+<% end %>

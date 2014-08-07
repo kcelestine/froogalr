@@ -46,14 +46,14 @@
       <%= @restaurant.worth_it_rating(rating) %>
     </p>
   <% end %>
-  
+
   <div id="map-canvas" class="restaurant-show-map"></div>
 
   <div id="reviews_container">
-    <div class="hidden-div" data-id="<%= @restaurant.id %>"></div>
+    <div class="hidden-div" id="<%= @restaurant.id %>"></div>
       <% if user_signed_in? %>
         <%= render 'reviews/form' %>
-      <% end %> 
+      <% end %>
     <% @restaurant.reviews.each do |review| %>
     <div class="review" id="<%= dom_id(review) %>">
       <%= render review %>
