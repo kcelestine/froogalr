@@ -1,0 +1,5 @@
+var newReview = '<%= j(render @review) %>';
+var domId = '<%= dom_id(@review) %>';
+var oldReview = $('#' + domId);
+var reviewToAdd = $(newReview);
+oldReview.replaceWith(reviewToAdd);
