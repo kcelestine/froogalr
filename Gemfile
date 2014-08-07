@@ -1,5 +1,4 @@
- 'https://rubygems.org'
-
+source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
@@ -38,15 +37,14 @@ group :development, :test  do
   gem 'awesome_print'
   gem 'shoulda-matchers', require: false
   gem 'rspec-collection_matchers'
-  gem 'factual-api'
   gem 'capybara'
   gem 'factory_girl_rails'
 end
 
 gem 'devise'
 
-gem 'factual-api'
 
+gem 'factual-api'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
