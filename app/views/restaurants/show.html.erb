@@ -51,13 +51,16 @@
 
   <div id="reviews_container">
     <div class="hidden-div" id="<%= @restaurant.id %>"></div>
+      
       <% if user_signed_in? %>
         <%= render 'reviews/form' %>
       <% end %>
+   
     <% @restaurant.reviews.each do |review| %>
     <div class="review" id="<%= dom_id(review) %>">
       <%= render review %>
     </div>
     <% end %>
+    
   </div>
 </div>
