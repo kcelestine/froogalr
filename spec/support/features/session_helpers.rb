@@ -1,7 +1,7 @@
 module Features
   module SessionHelpers
     def log_in
-      user = FactoryGirl.create(:user)
+      user = FactoryGirl.create(:confirmed_user)
       visit root_path
       click_on 'Sign in'
       fill_in 'Email', with: user.email
