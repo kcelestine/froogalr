@@ -193,11 +193,8 @@ DEPENDENCIES
   awesome_print
   better_errors
   binding_of_caller
-<<<<<<< HEAD
   capybara
-=======
   cancancan (~> 1.9)
->>>>>>> 862e6f75d634aca7618f55d966131080af0dfb1d
   coffee-rails (~> 4.0.0)
   devise
   factory_girl_rails
