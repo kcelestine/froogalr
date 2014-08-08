@@ -51,14 +51,16 @@ feature 'User logs in' do
 
   scenario 'and can review restaurants' do
     user = FactoryGirl.create(:confirmed_user)
-    restaurant = FactoryGirl.build(:restaurant)
+    restaurant = FactoryGirl.create(:restaurant)
     visit root_path 
     click_on 'Sign in'
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password 
     click_button 'Sign in'
     visit restaurant_path(restaurant)
-    click_on 'Review'
-    expect(page).to have_content('Review')
+    expect(page).to have_content(restaurant.name)
+    choose 'review_worth_it_5'
+    click_on 'Post Review'
+    expect(page).to have_content('Worth it?')
   end
 end

@@ -8,6 +8,8 @@ feature 'User updates account' do
   scenario 'and changes are reflected in the database' do
     user = FactoryGirl.create(:confirmed_user)
     log_in_with(user.email, user.password)
+    expect(page).to have_content('Welcome')
+    click_on 'My Profile'
     click_on 'Edit Account'
     fill_in 'Username', with: 'khadthegreat'
     fill_in 'user_current_password', with: user.password

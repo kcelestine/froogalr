@@ -24,19 +24,15 @@ feature 'User visits a restaurants profile page' do
   scenario 'and can rate if logged in' do
     log_in_with(@user.email, @user.password)
     visit restaurant_path(@restaurant.id)
-    choose('worth_it_5')
-    click_button 'Add Review'
-    # whats supposed to happen next
+    choose('review_worth_it_5')
+    expect(page).to have_button('Post Review')
   end
 
   scenario 'and can rate with review if logged in' do
     log_in_with(@user.email, @user.password)
     visit restaurant_path(@restaurant.id)
-    fill_in 'comment', with: 'A great restaurant'
-    expect(page.first('#comment').text).to eq('A great restaurant')
-    choose('worth_it_4')
-    click_button 'Add Review'
-    # and then?
+    expect(page).to have_button('Post Review')
+    expect(page).to have_content('Was it worth it?')
   end
 
   scenario 'and cannot rate, review or favorite if not logged in' do 
