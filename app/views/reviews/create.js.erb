@@ -1,5 +1,4 @@
 console.log('Your review was created!');
-
 var reviewHtml = '<%= j(render @review) %>';
 var reviewsContainer = $('#reviews_container');
 var domId = '<%= dom_id(@review) %>'
@@ -7,3 +6,4 @@ var reviewDiv = $('<div class="review" id="' + domId +'"></div>')
 
 reviewDiv.html(reviewHtml);
 reviewDiv.appendTo(reviewsContainer);
+$('#new_review').remove()
