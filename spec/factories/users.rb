@@ -1,5 +1,12 @@
 FactoryGirl.define do
   factory :user do
+      id 3
+      username 'tone'
+      first_name 'tOne'
+      last_name 'tTwo'
+      email 'to@t.co'
+      password 'password'
+      password_confirmation 'password'
     factory :user1 do
       id 1
       username 'one'

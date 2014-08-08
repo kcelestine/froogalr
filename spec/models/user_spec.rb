@@ -15,4 +15,19 @@ describe User do
   it { is_expected.to have_many(:reviews) }
   it { is_expected.to have_and_belong_to_many(:restaurants) }
 
+  it 'persists favorites to db' do
+    restaurant = FactoryGirl.create(:restaurant)
+    user = FactoryGirl.create(:user)
+    user.favorite(restaurant)
+    expect(user.restaurants.count).to eq(1)
+  end
+
+  it 'persists unfavorites to db' do
+    restaurant = FactoryGirl.create(:restaurant)
+    user = FactoryGirl.create(:user)
+    user.favorite(restaurant)
+    expect(user.restaurants.count).to eq(1)
+    user.unfavorite(restaurant)
+    expect(user.restaurants.count).to eq(0)
+  end
 end

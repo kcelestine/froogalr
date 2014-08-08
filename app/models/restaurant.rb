@@ -14,11 +14,11 @@ class Restaurant < ActiveRecord::Base
       when 5
         return "Totally Worth it!"
       when 4
-        return "Pretty Worth it"
+        return "Pretty Worth it!"
       when 3
-        return "Kinda Worth it"
+        return "Kinda Worth it!"
       when 2
-        return "Not Worth it"
+        return "Not Worth it!"
       when 1
         return "Meh!"
       end
