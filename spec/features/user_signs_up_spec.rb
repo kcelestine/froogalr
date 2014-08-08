@@ -4,7 +4,7 @@ require 'rails_helper'
 #  I want to sign up
 #  So I can visit protected areas of the site
 
-feature 'User signs up' do
+feature 'User signs up', js: true do
   before(:each) do
     visit root_path 
   end
@@ -25,18 +25,3 @@ feature 'User signs up' do
   end
 
 end
-=begin
-
-
-  def sign_up_with(username, f_name, l_name, email, password)
-    visit restaurants_path
-    click_on 'Sign Up' # GET /users/new
-    fill_in 'Username', with: username
-    fill_in 'First name', with: f_name
-    fill_in 'Last name', with: l_name
-    fill_in 'Email address', with: email
-    fill_in 'Password', with: password
-    fill_in 'Password confirmation', with: password
-    click_button 'Submit' # POST /users
-  end
-=end

@@ -4,8 +4,7 @@ require 'rails_helper'
 #  I want to log in
 #  So I can review and favorite restaurants
 
-feature 'User logs in' do
-
+feature 'User logs in', js: true do
   scenario 'with valid information' do
     user = FactoryGirl.create(:confirmed_user)
     visit root_path
@@ -46,7 +45,7 @@ feature 'User logs in' do
     visit restaurant_path(restaurant)
     expect(page).to have_content(restaurant.name)
     click_on 'Favorite'
-    expect(page).to have_content('Favorite')
+    expect(page).to have_button('Favorite')
   end
 
   scenario 'and can review restaurants' do
@@ -61,6 +60,6 @@ feature 'User logs in' do
     expect(page).to have_content(restaurant.name)
     choose 'review_worth_it_5'
     click_on 'Post Review'
-    expect(page).to have_content('Worth it?')
+    expect(page).to have_content('worth it?')
   end
 end

@@ -4,7 +4,7 @@ require 'rails_helper'
 #  I want to edit my account
 #  So that all of my information is accurate
 
-feature 'User updates account' do
+feature 'User updates account', js: true do
   scenario 'and changes are reflected in the database' do
     user = FactoryGirl.create(:confirmed_user)
     log_in_with(user.email, user.password)
