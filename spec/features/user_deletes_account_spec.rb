@@ -4,7 +4,7 @@ require 'rails_helper'
 #  I want to delete my account
 #  So that all of my reviews and favorites are deleted
 
-feature 'User deletes account' do
+feature 'User deletes account', js: true do
   scenario 'and all of the data is removed from the database' do
 
     user = FactoryGirl.create(:confirmed_user)
