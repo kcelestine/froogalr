@@ -72,7 +72,7 @@ Rails.application.configure do
     password:            ENV["FROOGALR_PASSWORD"],
     authentication:      'plain',
     enable_starttls_auto: true  }
-  config.action_mailer.default_url_options = { host: 'froogalr.herokuapp.com', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'froogalr.herokuapp.com' }
 
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to

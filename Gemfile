@@ -14,7 +14,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
-gem 'httparty'
+gem 'cancancan', '~> 1.9'
 
 gem 'rails_12factor', group: :production
 
@@ -44,6 +44,8 @@ group :development, :test  do
 end
 
 gem 'devise'
+
+gem 'factual-api'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

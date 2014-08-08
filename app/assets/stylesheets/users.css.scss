@@ -2,14 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {background: #f3f3f3;}
-#user-show-content {width: 1000px;margin: 30px auto;background: #F9F9F9;padding: 30px;box-shadow: 0 0 0 1px rgba(0,0,0,.04),0 1px 5px rgba(0,0,0,.1);}
+
+#user-show-content {width: 1000px;margin: 30px auto;background: #FCFCFC;border: 1px solid #E5E5E5; border-radius: 3px;min-height: 330px;}
 #user-show-content h2 {margin: 0;}
 
 
-#user-favorites {background:#FFF;padding:0 10px 10px 10px;box-shadow:0 0 0 1px rgba(0, 0, 0, 0.04), 0 1px 5px rgba(0, 0, 0, 0.1);width: 30%;}
+#user-favorites {width: 45%;float:left;float: left; margin-right: 5%;padding-left: 20px;}
+
 #favorites-header {float: left;width: 100%;margin: 5px 0 10px 0;}
-.favorites-list {list-style:none;width: 100%;padding-left: 0;margin-bottom: 0;}
-.favorites-list li {padding: 10px 0;margin: 5px 0;border-bottom: 1px solid #E2E3E2;}
+.favorites-list {list-style:none;width: 75%;padding-left: 0;margin-bottom: 0;background:#FFF;padding:0 10px 10px 10px;box-shadow:0 0 0 1px rgba(0, 0, 0, 0.04), 0 1px 5px rgba(0, 0, 0, 0.1);margin-top: 20px;float:left;border-radius: 2px;}
+.favorites-list li {padding: 10px 0;margin: 5px 0;border-bottom: 1px solid #E2E3E2;float:left;width: 100%;}
 .favorites-list li:last-child {border-bottom:0;padding-bottom: 0;}
 .favorites-list li a {border-bottom: none;padding-left: 20px;}
+#user-reviews {width: 45%;display:inline-block; border-left: 1px solid #e5e5e5;padding-left: 20px;min-height: 200px;}
+
+#user-show-content #top-content {padding-top: 20px;padding-bottom: 0px;border-bottom: 1px solid #E5E5E5;}
+#user-show-content #top-content h2, #user-show-content #top-content h3 {margin-left: 20px;}
+#edit-user {float:right;padding: 8px 15px;border: 2px solid #D53E2A;margin-right: 20px; }
+
+#reviews-header {margin: 5px 0 10px 0;}
+.reviews {list-style: none; width: 75%; padding-left: 0; margin-bottom: 0; background: #FFF; padding: 0 10px 10px 10px; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 1px 5px rgba(0, 0, 0, 0.1);margin-top: 20px;float:left;margin-bottom: 20px;border-radius: 2px;}
+.reviews .review-content {width: 100%;float:left;padding: 10px 0;margin: 5px 0;border-bottom: 1px solid #E2E3E2;}
+.reviews .review-content:last-child {border-bottom: 0;}
+.reviews .review-content a {border-bottom: 0;}
+.reviews .review-content p {margin: 5px 0;}

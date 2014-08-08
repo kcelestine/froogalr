@@ -1,0 +1,5 @@
+$('#new_review').remove()
+var reviewHtml = '<%= j(render 'reviews/form') %>';
+var domId = '<%= dom_id(@review) %>';
+var reviewToEdit = $('#' + domId);
+reviewToEdit.html(reviewHtml);

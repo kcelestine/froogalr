@@ -13,10 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require backstretch
 //= require_tree .
 
 
 function initialize() {
+  
   var mapOptions = {
     center: new google.maps.LatLng(40.7484,-73.9857),
     zoom: 14
