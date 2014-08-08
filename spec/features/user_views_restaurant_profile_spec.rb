@@ -4,7 +4,7 @@ require 'rails_helper'
 #  I want to view a restaurants profile page
 #  So I can view their ratings and reviews
 
-feature 'User visits a restaurants profile page' do
+feature 'User visits a restaurants profile page', js: true do
   before(:each) do
     @user = FactoryGirl.create(:confirmed_user)
     @restaurant = FactoryGirl.create(:restaurant)
