@@ -1,8 +1,12 @@
+//renders HTML for created review, grabs reviews container and makes new review DIV
 var reviewHtml = '<%= j(render @review) %>';
 var reviewsContainer = $('#reviews_container');
 var domId = '<%= dom_id(@review) %>'
 var reviewDiv = $('<div class="review" id="' + domId +'"></div>')
 
+//adds rendered review HTML to review div and appends that to container on page
 reviewDiv.html(reviewHtml);
 reviewDiv.appendTo(reviewsContainer);
+
+//removes create form from page
 $('#new_review').remove()

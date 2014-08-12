@@ -1,5 +1,8 @@
+//gets new review HTML and element of old review to update
 var newReview = '<%= j(render @review) %>';
 var domId = '<%= dom_id(@review) %>';
 var oldReview = $('#' + domId);
+
+//takes old review div and replaces with new review HTML
 var reviewToAdd = $(newReview);
 oldReview.replaceWith(reviewToAdd);

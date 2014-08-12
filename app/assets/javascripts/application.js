@@ -16,7 +16,6 @@
 //= require backstretch
 //= require_tree .
 
-
 function initialize() {
   
   var mapOptions = {

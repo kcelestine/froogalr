@@ -1,4 +1,7 @@
+//removes review to edit from page
 $('#new_review').remove()
+
+//renders review form html, gets current review to edit, replaces html with new review
 var reviewHtml = '<%= j(render 'reviews/form') %>';
 var domId = '<%= dom_id(@review) %>';
 var reviewToEdit = $('#' + domId);
