@@ -39,6 +39,7 @@ group :development, :test  do
   gem 'rspec-collection_matchers'
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'metric_fu'
 end
 
 gem 'devise'
