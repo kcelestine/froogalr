@@ -9,12 +9,14 @@ class User < ActiveRecord::Base
   validates_presence_of :first_name, :last_name, :username, :email, :encrypted_password
   validates_uniqueness_of :username, :email
 
+  #creates join table relationship btw user and restaurant
   def favorite(restaurant)
     unless self.restaurants.include?(restaurant)
       self.restaurants.push(restaurant)
     end
   end
 
+  #destroys join table relationship btw user and restaurant
   def unfavorite(restaurant)
     if self.restaurants.include?(restaurant)
       self.restaurants.destroy(restaurant)
