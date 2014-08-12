@@ -11,17 +11,13 @@ class Restaurant < ActiveRecord::Base
 
   #returns string for particular rating
   def worth_it_rating(rating)
-    case rating
-    when 5
-      return "Totally Worth it!"
-    when 4
-      return "Pretty Worth it"
-    when 3
-      return "Kinda Worth it"
-    when 2
-      return "Not Worth it"
-    when 1
-      return "Meh!"
-    end
-  end 
+    rating_hash = { 
+      5 => "Totally Torth It!",
+      4 => "Pretty Worth It",
+      3 => "Kinda Worth It",
+      2 => "Not Worth It", 
+      1 => "Meh!" }
+
+    return rating_hash[rating]
+  end
 end

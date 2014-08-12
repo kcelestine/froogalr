@@ -1,6 +1,7 @@
 class Ability
   include CanCan::Ability
   def initialize(user)
+    
     #only logged in users can create reviews 
     can :create, Review
 
@@ -13,5 +14,6 @@ class Ability
     can :destroy, Review do |review|
         user == review.user
     end
+    
   end 
 end
