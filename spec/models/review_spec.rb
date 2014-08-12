@@ -7,5 +7,5 @@ describe Review do
   it { is_expected.to validate_presence_of(:restaurant_id) }
 
   it { is_expected.to belong_to(:user) }
-  it { is_expected.to have_and_belong_to_many(:restaurants) }
+  it { is_expected.to belong_to(:restaurants) }
 end
